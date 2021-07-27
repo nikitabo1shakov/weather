@@ -7,6 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".view.MainFragment">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/message"
         android:layout_width="wrap_content"
