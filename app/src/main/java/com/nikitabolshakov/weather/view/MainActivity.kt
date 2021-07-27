@@ -1,8 +1,8 @@
-package com.nikitabolshakov.weather
+package com.nikitabolshakov.weather.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.nikitabolshakov.weather.ui.main.MainFragment
+import com.nikitabolshakov.weather.R
 
 class MainActivity : AppCompatActivity() {
 

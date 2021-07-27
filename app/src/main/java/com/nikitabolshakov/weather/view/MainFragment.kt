@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.ui.main
+package com.nikitabolshakov.weather.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.nikitabolshakov.weather.R
+import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
