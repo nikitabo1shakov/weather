@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.MainFragmentBinding
+import com.nikitabolshakov.weather.model.AppState
 import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -45,15 +47,29 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val observer = Observer<String> { renderData(it) }
+        val observer = Observer<AppState> { renderData(it) }
         viewModel.getData().observe(viewLifecycleOwner, observer)
         binding.button.setOnClickListener {
             viewModel.requestData(binding.edit.text.toString())
         }
     }
 
-    private fun renderData(data: String) {
-        binding.message.text = data
+    private fun renderData(data: AppState) {
+        when(data) {
+            is AppState.Success -> {
+                val weatherData = data.weatherData
+                binding.loadingLayout.visibility = View.GONE
+                binding.message.text = weatherData
+            }
+            is AppState.Loading -> {
+                binding.loadingLayout.visibility = View.VISIBLE
+            }
+            is AppState.Error -> {
+                binding.loadingLayout.visibility = View.GONE
+                Snackbar.make(binding.main, "Error", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Reload") { viewModel.requestData(binding.edit.text.toString()) }
+                    .show()
+            }
+        }
     }
-
 }
