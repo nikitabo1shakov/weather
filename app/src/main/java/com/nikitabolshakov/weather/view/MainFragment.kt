@@ -23,7 +23,6 @@ class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
 
     private var _binding: MainFragmentBinding? = null
-
     private val binding
         get() = _binding!!
 
