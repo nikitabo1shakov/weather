@@ -1,17 +1,17 @@
 package com.nikitabolshakov.weather.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.MainFragmentBinding
 import com.nikitabolshakov.weather.model.AppState
+import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -49,17 +49,15 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val observer = Observer<AppState> { renderData(it) }
         viewModel.getData().observe(viewLifecycleOwner, observer)
-        binding.button.setOnClickListener {
-            viewModel.requestData(binding.edit.text.toString())
-        }
+        viewModel.getWeatherFromRemoteSource()
     }
 
     private fun renderData(data: AppState) {
-        when(data) {
+        when (data) {
             is AppState.Success -> {
                 val weatherData = data.weatherData
                 binding.loadingLayout.visibility = View.GONE
-                binding.message.text = weatherData
+                populateData(weatherData)
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -67,9 +65,22 @@ class MainFragment : Fragment() {
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.GONE
                 Snackbar.make(binding.main, "Error", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Reload") { viewModel.requestData(binding.edit.text.toString()) }
+                    .setAction("Reload") { viewModel.getWeatherFromRemoteSource() }
                     .show()
             }
+        }
+    }
+
+    private fun populateData(weatherData: Weather) {
+        with(binding) {
+            cityName.text = weatherData.city.city
+            cityCoordinates.text = String.format(
+                getString(R.string.city_coordinates),
+                weatherData.city.lat.toString(),
+                weatherData.city.lon.toString()
+            )
+            temperatureValue.text = weatherData.temperature.toString()
+            feelsLikeValue.text = weatherData.feelsLike.toString()
         }
     }
 }
