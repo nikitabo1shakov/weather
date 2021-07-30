@@ -25,6 +25,8 @@ class MainFragment : Fragment() {
     private var _binding: MainFragmentBinding? = null
     private val binding
         get() = _binding!!
+    private val adapter = MainFragmentAdapter()
+    private var isDataSetRus: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,10 +47,24 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        binding.mainFragmentRecyclerView.adapter = adapter
+        binding.mainFragmentFAB.setOnClickListener {
+            changeWeatherDataSet()
+        }
         val observer = Observer<AppState> { renderData(it) }
         viewModel.getData().observe(viewLifecycleOwner, observer)
-        viewModel.getWeatherFromRemoteSource()
+        viewModel.getWeatherFromLocalSourceRus()
+    }
+
+    private fun changeWeatherDataSet() {
+        if (isDataSetRus) {
+            viewModel.getWeatherFromLocalSourceRus()
+            binding.mainFragmentFAB.setImageResource(R.drawable.ic_earth)
+        } else {
+            viewModel.getWeatherFromLocalSourceWorld()
+            binding.mainFragmentFAB.setImageResource(R.drawable.ic_russia)
+        }
+        isDataSetRus = !isDataSetRus
     }
 
     private fun renderData(data: AppState) {
@@ -56,21 +72,24 @@ class MainFragment : Fragment() {
             is AppState.Success -> {
                 val weatherData = data.weatherData
                 binding.loadingLayout.visibility = View.GONE
-                populateData(weatherData)
+                adapter.setWeather(weatherData)
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
             }
             is AppState.Error -> {
                 binding.loadingLayout.visibility = View.GONE
-                Snackbar.make(binding.main, "Error", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("Reload") { viewModel.getWeatherFromRemoteSource() }
+                Snackbar.make(binding.mainFragmentFAB, "Error", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Reload") {
+                        if (isDataSetRus) viewModel.getWeatherFromLocalSourceRus()
+                        else viewModel.getWeatherFromLocalSourceWorld()
+                    }
                     .show()
             }
         }
     }
 
-    private fun populateData(weatherData: Weather) {
+    /* private fun populateData(weatherData: Weather) {
         with(binding) {
             cityName.text = weatherData.city.city
             cityCoordinates.text = String.format(
@@ -81,5 +100,5 @@ class MainFragment : Fragment() {
             temperatureValue.text = weatherData.temperature.toString()
             feelsLikeValue.text = weatherData.feelsLike.toString()
         }
-    }
+    } */
 }
