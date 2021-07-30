@@ -23,6 +23,7 @@
         android:src="@drawable/ic_russia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@null"
         app:maxImageSize="@dimen/fab_icon_size" />
 
     <FrameLayout
