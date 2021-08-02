@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.MainFragmentBinding
-import com.nikitabolshakov.weather.model.AppState
+import com.nikitabolshakov.weather.model.state.AppState
 import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
@@ -48,7 +48,7 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        adapter.setOnItemViewClickListener(object: OnItemViewClickListener {
+        adapter.setOnItemViewClickListener(object : OnItemViewClickListener {
             override fun onItemViewClick(weather: Weather) {
                 val manager = activity?.supportFragmentManager
                 if (manager != null) {

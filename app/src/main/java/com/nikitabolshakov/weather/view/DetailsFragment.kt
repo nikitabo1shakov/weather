@@ -45,6 +45,7 @@ class DetailsFragment : Fragment() {
     }
 
     companion object {
+
         const val BUNDLE_EXTRA = "weather"
 
         fun newInstance(bundle: Bundle): DetailsFragment {

@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.model
+package com.nikitabolshakov.weather.model.state
 
 import com.nikitabolshakov.weather.model.data.Weather
 

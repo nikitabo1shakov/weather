@@ -2,7 +2,6 @@ package com.nikitabolshakov.weather.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitabolshakov.weather.databinding.MainRecyclerItemBinding
 import com.nikitabolshakov.weather.model.data.Weather

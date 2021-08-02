@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/main_recycler_item"/>
+        tools:listitem="@layout/main_recycler_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/mainFragmentFAB"
@@ -23,8 +23,8 @@
         android:src="@drawable/ic_russia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@null"
-        app:maxImageSize="@dimen/fab_icon_size" />
+        app:maxImageSize="@dimen/fab_icon_size"
+        app:tint="@null" />
 
     <FrameLayout
         android:id="@+id/loadingLayout"

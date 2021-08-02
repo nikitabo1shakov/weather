@@ -17,5 +17,4 @@ class RepositoryImpl : Repository {
     override fun getWeatherFromLocalStorageWorld(): List<Weather> {
         return getWorldCities()
     }
-
 }

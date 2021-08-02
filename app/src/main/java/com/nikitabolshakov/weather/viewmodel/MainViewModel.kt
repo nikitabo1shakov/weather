@@ -3,7 +3,7 @@ package com.nikitabolshakov.weather.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikitabolshakov.weather.model.AppState
+import com.nikitabolshakov.weather.model.state.AppState
 import com.nikitabolshakov.weather.model.repository.Repository
 import com.nikitabolshakov.weather.model.repository.RepositoryImpl
 import java.lang.Thread.sleep
