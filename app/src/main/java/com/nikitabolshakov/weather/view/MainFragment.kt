@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.snackbar.Snackbar
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.MainFragmentBinding
 import com.nikitabolshakov.weather.model.state.AppState
-import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -81,7 +79,10 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 binding.loadingLayout.hide()
-                binding.mainFragmentFAB.showSnackBar("Error", "Reload") {
+                binding.mainFragmentFAB.showSnackBar(
+                    getString(R.string.text_error),
+                    getString(R.string.text_reload)
+                ) {
                     if (isDataSetRus) {
                         viewModel.getWeatherFromLocalSourceRus()
                     } else {
