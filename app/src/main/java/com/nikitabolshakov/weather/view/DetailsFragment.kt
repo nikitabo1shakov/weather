@@ -2,26 +2,15 @@ package com.nikitabolshakov.weather.view
 
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.google.gson.Gson
-import com.nikitabolshakov.weather.BuildConfig
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.DetailsFragmentBinding
 import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.model.dto.WeatherDTO
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.net.MalformedURLException
-import java.net.URL
-import java.util.stream.Collectors
-import javax.net.ssl.HttpsURLConnection
 
 class DetailsFragment : Fragment() {
 
@@ -48,7 +37,7 @@ class DetailsFragment : Fragment() {
         loader.loadWeather()
     }
 
-    private val onLoadListener = object: WeatherLoader.WeatherLoaderListener {
+    private val onLoadListener = object : WeatherLoader.WeatherLoaderListener {
         override fun onLoaded(weatherDTO: WeatherDTO) {
             displayWeather(weatherDTO)
         }

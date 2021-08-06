@@ -42,10 +42,10 @@ class WeatherLoader(
                         BuildConfig.WEATHER_API_KEY
                     )
                     urlConnection.readTimeout = 10000
+
                     val bufferedReader =
                         BufferedReader(InputStreamReader(urlConnection.inputStream))
 
-                    // преобразование ответа от сервера (JSON) в модель данных (WeatherDTO)
                     val weatherDTO: WeatherDTO =
                         Gson().fromJson(getLines(bufferedReader), WeatherDTO::class.java)
                     handler.post { listener.onLoaded(weatherDTO) }
@@ -53,7 +53,6 @@ class WeatherLoader(
                     Log.e("", "Fail connection", e)
                     e.printStackTrace()
                     listener.onFailed(e)
-                    //Обработка ошибки
                 } finally {
                     urlConnection.disconnect()
                 }
@@ -62,7 +61,6 @@ class WeatherLoader(
             Log.e("", "Fail URI", e)
             e.printStackTrace()
             listener.onFailed(e)
-            //Обработка ошибки
         }
     }
 
