@@ -30,7 +30,7 @@ class DetailsFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        weatherBundle = arguments?.getParcelable<Weather>(BUNDLE_EXTRA) ?: Weather()
+        weatherBundle = arguments?.getParcelable(BUNDLE_EXTRA) ?: Weather()
         binding.main.hide()
         binding.loadingLayout.show()
         val loader = WeatherLoader(onLoadListener, weatherBundle.city.lat, weatherBundle.city.lon)
