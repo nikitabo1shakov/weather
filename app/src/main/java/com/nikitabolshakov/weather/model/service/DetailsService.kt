@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.gson.Gson
 import com.nikitabolshakov.weather.BuildConfig
+import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.model.dto.WeatherDTO
 import com.nikitabolshakov.weather.view.*
 import java.io.BufferedReader
@@ -65,7 +66,7 @@ class DetailsService(name: String = "DetailService") : IntentService(name) {
                     )
                 onResponse(weatherDTO)
             } catch (e: Exception) {
-                onErrorRequest(e.message ?: "Empty error")
+                onErrorRequest(e.message ?: getString(R.string.text_empty_error))
             } finally {
                 urlConnection.disconnect()
             }
