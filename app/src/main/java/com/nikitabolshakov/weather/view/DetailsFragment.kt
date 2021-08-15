@@ -11,6 +11,7 @@ import com.nikitabolshakov.weather.databinding.DetailsFragmentBinding
 import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.model.state.AppState
 import com.nikitabolshakov.weather.viewmodel.DetailsViewModel
+import com.squareup.picasso.Picasso
 
 class DetailsFragment : Fragment() {
 
@@ -85,6 +86,10 @@ class DetailsFragment : Fragment() {
                 feelsLikeValue.text = it.feelsLike.toString()
                 weatherCondition.text = it.condition
             }
+            Picasso
+                .get()
+                .load("https://freepngimg.com/thumb/city/36275-3-city-hd.png")
+                .into(headerIcon)
         }
     }
 
