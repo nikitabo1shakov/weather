@@ -2,13 +2,12 @@ package com.nikitabolshakov.weather.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikitabolshakov.weather.model.data.convertDtoToModel
+import com.nikitabolshakov.weather.model.utils.convertDtoToModel
 import com.nikitabolshakov.weather.model.dto.FactDTO
 import com.nikitabolshakov.weather.model.dto.WeatherDTO
 import com.nikitabolshakov.weather.model.repository.DetailsRepository
 import com.nikitabolshakov.weather.model.repository.DetailsRepositoryImpl
 import com.nikitabolshakov.weather.model.repository.RemoteDataSource
-import com.nikitabolshakov.weather.model.state.AppState
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

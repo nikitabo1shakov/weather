@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.view
+package com.nikitabolshakov.weather.view.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.DetailsFragmentBinding
 import com.nikitabolshakov.weather.model.data.Weather
-import com.nikitabolshakov.weather.model.state.AppState
+import com.nikitabolshakov.weather.model.utils.hide
+import com.nikitabolshakov.weather.model.utils.show
+import com.nikitabolshakov.weather.model.utils.showSnackBar
+import com.nikitabolshakov.weather.viewmodel.AppState
 import com.nikitabolshakov.weather.viewmodel.DetailsViewModel
 import com.squareup.picasso.Picasso
 

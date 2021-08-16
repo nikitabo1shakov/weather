@@ -3,6 +3,7 @@ package com.nikitabolshakov.weather.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nikitabolshakov.weather.databinding.MainActivityBinding
+import com.nikitabolshakov.weather.view.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

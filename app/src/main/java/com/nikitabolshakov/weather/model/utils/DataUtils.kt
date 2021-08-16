@@ -1,5 +1,7 @@
-package com.nikitabolshakov.weather.model.data
+package com.nikitabolshakov.weather.model.utils
 
+import com.nikitabolshakov.weather.model.data.Weather
+import com.nikitabolshakov.weather.model.data.getDefaultCity
 import com.nikitabolshakov.weather.model.dto.WeatherDTO
 
 fun convertDtoToModel(weatherDTO: WeatherDTO): List<Weather> {

@@ -4,7 +4,7 @@ import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.model.data.getRussianCities
 import com.nikitabolshakov.weather.model.data.getWorldCities
 
-class RepositoryImpl : Repository {
+class MainRepositoryImpl : MainRepository {
     override fun getWeatherFromServer() = Weather()
     override fun getWeatherFromLocalStorageRus() = getRussianCities()
     override fun getWeatherFromLocalStorageWorld() = getWorldCities()

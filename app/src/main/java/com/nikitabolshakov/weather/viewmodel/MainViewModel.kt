@@ -3,12 +3,12 @@ package com.nikitabolshakov.weather.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikitabolshakov.weather.model.state.AppState
-import com.nikitabolshakov.weather.model.repository.Repository
-import com.nikitabolshakov.weather.model.repository.RepositoryImpl
+import com.nikitabolshakov.weather.model.repository.MainRepository
+import com.nikitabolshakov.weather.model.repository.MainRepositoryImpl
 import java.lang.Thread.sleep
 
-class MainViewModel(private val repository: Repository = RepositoryImpl()) : ViewModel() {
+class MainViewModel(private val mainRepository: MainRepository = MainRepositoryImpl()) :
+    ViewModel() {
 
     private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData()
 
@@ -24,8 +24,8 @@ class MainViewModel(private val repository: Repository = RepositoryImpl()) : Vie
             sleep(3000)
             liveDataToObserve.postValue(
                 AppState.Success(
-                    if (isRussia) repository.getWeatherFromLocalStorageRus()
-                    else repository.getWeatherFromLocalStorageWorld()
+                    if (isRussia) mainRepository.getWeatherFromLocalStorageRus()
+                    else mainRepository.getWeatherFromLocalStorageWorld()
                 )
             )
         }.start()

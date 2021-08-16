@@ -2,7 +2,7 @@ package com.nikitabolshakov.weather.model.repository
 
 import com.nikitabolshakov.weather.model.data.Weather
 
-interface Repository {
+interface MainRepository {
 
     fun getWeatherFromServer(): Weather
     fun getWeatherFromLocalStorageRus(): List<Weather>
