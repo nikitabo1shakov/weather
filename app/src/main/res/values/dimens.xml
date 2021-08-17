@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="city_name_margin_top">50dp</dimen>
+    <dimen name="city_name_margin_top">10dp</dimen>
     <dimen name="margin_15_dp">15dp</dimen>
     <dimen name="temperature_value_text_size">40sp</dimen>
     <dimen name="feels_like_text_size">30sp</dimen>
@@ -11,4 +11,5 @@
     <dimen name="recycler_item_padding">10dp</dimen>
     <dimen name="recycler_item_text_size">25sp</dimen>
     <dimen name="recycler_item_layout_margin_7_dp">7dp</dimen>
+    <dimen name="town_header_height">100dp</dimen>
 </resources>

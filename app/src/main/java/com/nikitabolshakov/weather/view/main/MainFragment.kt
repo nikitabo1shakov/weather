@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.view
+package com.nikitabolshakov.weather.view.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.MainFragmentBinding
-import com.nikitabolshakov.weather.model.state.AppState
+import com.nikitabolshakov.weather.model.utils.hide
+import com.nikitabolshakov.weather.model.utils.show
+import com.nikitabolshakov.weather.model.utils.showSnackBar
+import com.nikitabolshakov.weather.view.details.DetailsFragment
+import com.nikitabolshakov.weather.viewmodel.AppState
 import com.nikitabolshakov.weather.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
@@ -23,8 +27,7 @@ class MainFragment : Fragment() {
     }
 
     private var _binding: MainFragmentBinding? = null
-    private val binding
-        get() = _binding!!
+    private val binding get() = _binding!!
     private val adapter = MainFragmentAdapter()
     private var isDataSetRus: Boolean = true
 

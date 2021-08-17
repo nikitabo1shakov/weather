@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.view
+package com.nikitabolshakov.weather.model.utils
 
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
