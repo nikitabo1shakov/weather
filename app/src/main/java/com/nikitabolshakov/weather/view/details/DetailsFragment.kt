@@ -52,7 +52,7 @@ class DetailsFragment : Fragment() {
             is AppState.Success -> {
                 binding.main.show()
                 binding.loadingLayout.hide()
-                setWeather(appState.weatherData[0])
+                setWeather(appState.weatherData.first())
             }
             is AppState.Loading -> {
                 binding.main.hide()
