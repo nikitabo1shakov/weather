@@ -3,8 +3,8 @@ package com.nikitabolshakov.weather.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikitabolshakov.weather.model.repository.MainRepository
-import com.nikitabolshakov.weather.model.repository.MainRepositoryImpl
+import com.nikitabolshakov.weather.model.repository.main.MainRepository
+import com.nikitabolshakov.weather.model.repository.main.MainRepositoryImpl
 import java.lang.Thread.sleep
 
 class MainViewModel(private val mainRepository: MainRepository = MainRepositoryImpl()) :

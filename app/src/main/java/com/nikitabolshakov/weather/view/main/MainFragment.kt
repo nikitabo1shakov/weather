@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.databinding.MainFragmentBinding
+import com.nikitabolshakov.weather.databinding.FragmentMainBinding
 import com.nikitabolshakov.weather.model.utils.hide
 import com.nikitabolshakov.weather.model.utils.show
 import com.nikitabolshakov.weather.model.utils.showSnackBar
@@ -30,7 +30,7 @@ class MainFragment : Fragment() {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private val adapter = MainFragmentAdapter()
     private var isDataSetRus: Boolean = true
@@ -39,7 +39,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -99,14 +99,14 @@ class MainFragment : Fragment() {
     private fun renderData(data: AppState) {
         when (data) {
             is AppState.Success -> {
-                binding.loadingLayout.hide()
+                binding.includedLoadingLayout.loadingLayout.hide()
                 adapter.setWeather(data.weatherData)
             }
             is AppState.Loading -> {
-                binding.loadingLayout.show()
+                binding.includedLoadingLayout.loadingLayout.show()
             }
             is AppState.Error -> {
-                binding.loadingLayout.hide()
+                binding.includedLoadingLayout.loadingLayout.hide()
                 binding.mainFragmentFAB.showSnackBar(
                     getString(R.string.text_error),
                     getString(R.string.text_reload)

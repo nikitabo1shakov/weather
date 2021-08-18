@@ -3,8 +3,8 @@ package com.nikitabolshakov.weather.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nikitabolshakov.weather.app.App.Companion.getHistoryDao
-import com.nikitabolshakov.weather.model.repository.LocalRepository
-import com.nikitabolshakov.weather.model.repository.LocalRepositoryImpl
+import com.nikitabolshakov.weather.model.repository.local.LocalRepository
+import com.nikitabolshakov.weather.model.repository.local.LocalRepositoryImpl
 
 class HistoryViewModel(
     val historyLiveData: MutableLiveData<AppState> = MutableLiveData(),

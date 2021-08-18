@@ -3,7 +3,7 @@ package com.nikitabolshakov.weather.view.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nikitabolshakov.weather.databinding.MainRecyclerItemBinding
+import com.nikitabolshakov.weather.databinding.RecyclerItemMainBinding
 import com.nikitabolshakov.weather.model.data.Weather
 
 class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {
@@ -21,7 +21,7 @@ class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHol
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        val binding = MainRecyclerItemBinding.inflate(
+        val binding = RecyclerItemMainBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return MainViewHolder(binding)
@@ -35,7 +35,7 @@ class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHol
         return weatherData.size
     }
 
-    inner class MainViewHolder(private val binding: MainRecyclerItemBinding) :
+    inner class MainViewHolder(private val binding: RecyclerItemMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(weather: Weather) {

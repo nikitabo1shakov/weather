@@ -3,7 +3,7 @@ package com.nikitabolshakov.weather.view.history
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nikitabolshakov.weather.databinding.HistoryRecyclerItemBinding
+import com.nikitabolshakov.weather.databinding.RecyclerItemHistoryBinding
 import com.nikitabolshakov.weather.model.data.Weather
 
 class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.HistoryViewHolder>() {
@@ -19,7 +19,7 @@ class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.Histo
         parent: ViewGroup,
         viewType: Int
     ): HistoryViewHolder {
-        val binding = HistoryRecyclerItemBinding.inflate(
+        val binding = RecyclerItemHistoryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -35,7 +35,7 @@ class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.Histo
         return data.size
     }
 
-    inner class HistoryViewHolder(private val binding: HistoryRecyclerItemBinding) :
+    inner class HistoryViewHolder(private val binding: RecyclerItemHistoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(data: Weather) {

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.databinding.HistoryFragmentBinding
+import com.nikitabolshakov.weather.databinding.FragmentHistoryBinding
 import com.nikitabolshakov.weather.model.utils.hide
 import com.nikitabolshakov.weather.model.utils.show
 import com.nikitabolshakov.weather.model.utils.showSnackBar
@@ -16,7 +16,7 @@ import com.nikitabolshakov.weather.viewmodel.HistoryViewModel
 
 class HistoryFragment : Fragment() {
 
-    private var _binding: HistoryFragmentBinding? = null
+    private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
     private val viewModel: HistoryViewModel by lazy {
         ViewModelProvider(this).get(HistoryViewModel::class.java)
@@ -29,7 +29,7 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = HistoryFragmentBinding.inflate(inflater, container, false)
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 

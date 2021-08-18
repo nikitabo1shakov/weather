@@ -8,6 +8,10 @@ import com.nikitabolshakov.weather.model.utils.convertDtoToModel
 import com.nikitabolshakov.weather.model.dto.FactDTO
 import com.nikitabolshakov.weather.model.dto.WeatherDTO
 import com.nikitabolshakov.weather.model.repository.*
+import com.nikitabolshakov.weather.model.repository.details.DetailsRepository
+import com.nikitabolshakov.weather.model.repository.details.DetailsRepositoryImpl
+import com.nikitabolshakov.weather.model.repository.local.LocalRepository
+import com.nikitabolshakov.weather.model.repository.local.LocalRepositoryImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

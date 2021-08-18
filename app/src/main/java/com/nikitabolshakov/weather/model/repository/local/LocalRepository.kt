@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.model.repository
+package com.nikitabolshakov.weather.model.repository.local
 
 import com.nikitabolshakov.weather.model.data.Weather
 
