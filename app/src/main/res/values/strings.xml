@@ -7,4 +7,11 @@
     <string name="text_reload">Reload</string>
     <string name="text_empty_error">Empty error</string>
     <string name="menu_title_history">history</string>
+    <string name="menu_title_contact_list">contact list</string>
+    <string name="alter_dialog_title">Доступ к контактам</string>
+    <string name="alter_dialog_message">Объяснение</string>
+    <string name="alter_dialog_positive_button">Предоставить доступ</string>
+    <string name="alter_dialog_negative_button_1">Не надо</string>
+    <string name="alter_dialog_negative_button_2">Закрыть</string>
+    <string name="toast_text">Read Contact List</string>
 </resources>
