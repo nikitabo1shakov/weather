@@ -6,4 +6,5 @@
     <string name="text_error">Error</string>
     <string name="text_reload">Reload</string>
     <string name="text_empty_error">Empty error</string>
+    <string name="menu_title_history">history</string>
 </resources>

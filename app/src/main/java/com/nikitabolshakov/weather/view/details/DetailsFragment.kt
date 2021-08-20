@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.databinding.DetailsFragmentBinding
+import com.nikitabolshakov.weather.databinding.FragmentDetailsBinding
+import com.nikitabolshakov.weather.model.data.City
 import com.nikitabolshakov.weather.model.data.Weather
 import com.nikitabolshakov.weather.model.utils.hide
 import com.nikitabolshakov.weather.model.utils.show
@@ -18,7 +19,7 @@ import com.squareup.picasso.Picasso
 
 class DetailsFragment : Fragment() {
 
-    private var _binding: DetailsFragmentBinding? = null
+    private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
     private lateinit var weatherBundle: Weather
 
@@ -31,7 +32,7 @@ class DetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DetailsFragmentBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -51,16 +52,16 @@ class DetailsFragment : Fragment() {
         when (appState) {
             is AppState.Success -> {
                 binding.main.show()
-                binding.loadingLayout.hide()
-                setWeather(appState.weatherData[0])
+                binding.includedLoadingLayout.loadingLayout.hide()
+                setWeather(appState.weatherData.first())
             }
             is AppState.Loading -> {
                 binding.main.hide()
-                binding.loadingLayout.show()
+                binding.includedLoadingLayout.loadingLayout.show()
             }
             is AppState.Error -> {
                 binding.main.show()
-                binding.loadingLayout.hide()
+                binding.includedLoadingLayout.loadingLayout.hide()
                 binding.main.showSnackBar(
                     getString(R.string.text_error),
                     getString(R.string.text_reload)
@@ -83,6 +84,7 @@ class DetailsFragment : Fragment() {
                     city.lat.toString(),
                     city.lon.toString()
                 )
+                saveCity(city, weather)
             }
             weather.let {
                 temperatureValue.text = it.temperature.toString()
@@ -94,6 +96,20 @@ class DetailsFragment : Fragment() {
                 .load("https://freepngimg.com/thumb/city/36275-3-city-hd.png")
                 .into(headerIcon)
         }
+    }
+
+    private fun saveCity(
+        city: City,
+        weather: Weather
+    ) {
+        viewModel.saveCityToDB(
+            Weather(
+                city,
+                weather.temperature,
+                weather.feelsLike,
+                weather.condition
+            )
+        )
     }
 
     companion object {
