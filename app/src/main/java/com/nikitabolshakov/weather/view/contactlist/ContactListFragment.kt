@@ -11,10 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.FragmentContactListBinding
-import com.nikitabolshakov.weather.viewmodel.ContactListViewModel
 
 class ContactListFragment : Fragment() {
 
@@ -24,10 +22,6 @@ class ContactListFragment : Fragment() {
 
     private var _binding: FragmentContactListBinding? = null
     private val binding get() = _binding!!
-
-    private val viewModel: ContactListViewModel by lazy {
-        ViewModelProvider(this).get(ContactListViewModel::class.java)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

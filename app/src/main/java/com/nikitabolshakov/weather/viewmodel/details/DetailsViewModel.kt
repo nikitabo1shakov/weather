@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.viewmodel
+package com.nikitabolshakov.weather.viewmodel.details
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,6 +12,7 @@ import com.nikitabolshakov.weather.model.repository.details.DetailsRepository
 import com.nikitabolshakov.weather.model.repository.details.DetailsRepositoryImpl
 import com.nikitabolshakov.weather.model.repository.local.LocalRepository
 import com.nikitabolshakov.weather.model.repository.local.LocalRepositoryImpl
+import com.nikitabolshakov.weather.viewmodel.AppState
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

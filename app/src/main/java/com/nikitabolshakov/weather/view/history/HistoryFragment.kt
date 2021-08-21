@@ -12,7 +12,7 @@ import com.nikitabolshakov.weather.model.utils.hide
 import com.nikitabolshakov.weather.model.utils.show
 import com.nikitabolshakov.weather.model.utils.showSnackBar
 import com.nikitabolshakov.weather.viewmodel.AppState
-import com.nikitabolshakov.weather.viewmodel.HistoryViewModel
+import com.nikitabolshakov.weather.viewmodel.history.HistoryViewModel
 
 class HistoryFragment : Fragment() {
 
