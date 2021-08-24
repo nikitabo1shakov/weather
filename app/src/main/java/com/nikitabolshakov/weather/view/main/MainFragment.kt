@@ -16,7 +16,7 @@ import com.nikitabolshakov.weather.model.utils.show
 import com.nikitabolshakov.weather.model.utils.showSnackBar
 import com.nikitabolshakov.weather.view.details.DetailsFragment
 import com.nikitabolshakov.weather.viewmodel.AppState
-import com.nikitabolshakov.weather.viewmodel.MainViewModel
+import com.nikitabolshakov.weather.viewmodel.main.MainViewModel
 
 private const val IS_RUSSIAN_KEY = "LIST_OF_RUSSIAN_KEY"
 

@@ -14,10 +14,21 @@ import com.nikitabolshakov.weather.model.utils.hide
 import com.nikitabolshakov.weather.model.utils.show
 import com.nikitabolshakov.weather.model.utils.showSnackBar
 import com.nikitabolshakov.weather.viewmodel.AppState
-import com.nikitabolshakov.weather.viewmodel.DetailsViewModel
+import com.nikitabolshakov.weather.viewmodel.details.DetailsViewModel
 import com.squareup.picasso.Picasso
 
 class DetailsFragment : Fragment() {
+
+    companion object {
+
+        const val BUNDLE_EXTRA = "weather"
+
+        fun newInstance(bundle: Bundle): DetailsFragment {
+            val fragment = DetailsFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
 
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
@@ -34,11 +45,6 @@ class DetailsFragment : Fragment() {
     ): View {
         _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -112,14 +118,8 @@ class DetailsFragment : Fragment() {
         )
     }
 
-    companion object {
-
-        const val BUNDLE_EXTRA = "weather"
-
-        fun newInstance(bundle: Bundle): DetailsFragment {
-            val fragment = DetailsFragment()
-            fragment.arguments = bundle
-            return fragment
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

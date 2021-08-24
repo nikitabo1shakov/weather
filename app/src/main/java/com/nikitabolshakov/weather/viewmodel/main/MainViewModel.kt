@@ -1,10 +1,11 @@
-package com.nikitabolshakov.weather.viewmodel
+package com.nikitabolshakov.weather.viewmodel.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nikitabolshakov.weather.model.repository.main.MainRepository
 import com.nikitabolshakov.weather.model.repository.main.MainRepositoryImpl
+import com.nikitabolshakov.weather.viewmodel.AppState
 import java.lang.Thread.sleep
 
 class MainViewModel(private val mainRepository: MainRepository = MainRepositoryImpl()) :

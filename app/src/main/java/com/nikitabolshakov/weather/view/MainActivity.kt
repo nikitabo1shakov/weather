@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
+import com.nikitabolshakov.weather.view.contactlist.ContactListFragment
 import com.nikitabolshakov.weather.view.history.HistoryFragment
 import com.nikitabolshakov.weather.view.main.MainFragment
 
@@ -35,6 +36,15 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.apply {
                     beginTransaction()
                         .replace(R.id.container, HistoryFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
+            R.id.menu_contact_list -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .replace(R.id.container, ContactListFragment.newInstance())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
                 }
