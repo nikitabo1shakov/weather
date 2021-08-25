@@ -9,6 +9,7 @@ import com.nikitabolshakov.weather.databinding.ActivityMainBinding
 import com.nikitabolshakov.weather.view.contactlist.ContactListFragment
 import com.nikitabolshakov.weather.view.history.HistoryFragment
 import com.nikitabolshakov.weather.view.main.MainFragment
+import com.nikitabolshakov.weather.view.maps.MapsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,6 +48,14 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.container, ContactListFragment.newInstance())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
+                }
+                true
+            }
+            R.id.menu_maps -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .replace(R.id.container, MapsFragment.newInstance())
+                        .commitNow()
                 }
                 true
             }
