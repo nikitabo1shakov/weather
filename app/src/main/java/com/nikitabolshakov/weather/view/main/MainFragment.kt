@@ -115,7 +115,7 @@ class MainFragment : Fragment() {
         requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
     }
 
-    val requestPermissionLauncher =
+    private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 getLocation()

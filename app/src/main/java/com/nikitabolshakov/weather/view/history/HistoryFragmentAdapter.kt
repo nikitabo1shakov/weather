@@ -1,5 +1,6 @@
 package com.nikitabolshakov.weather.view.history
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,8 +9,21 @@ import com.nikitabolshakov.weather.model.data.Weather
 
 class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.HistoryViewHolder>() {
 
+    inner class HistoryViewHolder(private val binding: RecyclerItemHistoryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(data: Weather) {
+            binding.apply {
+                cityName.text = data.city.city
+                weatherCondition.text = data.condition
+                weatherTemperature.text = data.temperature.toString()
+            }
+        }
+    }
+
     private var data: List<Weather> = arrayListOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(data: List<Weather>) {
         this.data = data
         notifyDataSetChanged()
@@ -31,19 +45,5 @@ class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.Histo
         holder.bind(data[position])
     }
 
-    override fun getItemCount(): Int {
-        return data.size
-    }
-
-    inner class HistoryViewHolder(private val binding: RecyclerItemHistoryBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(data: Weather) {
-            binding.apply {
-                cityName.text = data.city.city
-                weatherCondition.text = data.condition
-                weatherTemperature.text = data.temperature.toString()
-            }
-        }
-    }
+    override fun getItemCount() = data.size
 }

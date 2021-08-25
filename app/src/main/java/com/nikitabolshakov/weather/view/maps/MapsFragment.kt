@@ -4,12 +4,10 @@ import android.graphics.Color
 import android.location.Address
 import android.location.Geocoder
 import androidx.fragment.app.Fragment
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -19,6 +17,8 @@ import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.FragmentMapsBinding
 import java.io.IOException
 
+private const val ZOOM = 15f
+
 class MapsFragment : Fragment() {
 
     companion object {
@@ -26,6 +26,7 @@ class MapsFragment : Fragment() {
     }
 
     private lateinit var map: GoogleMap
+
     private val markers: ArrayList<Marker> = arrayListOf()
 
     private val callback = OnMapReadyCallback { googleMap ->
@@ -49,14 +50,9 @@ class MapsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMapsBinding.inflate(inflater, container, false)
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -74,7 +70,7 @@ class MapsFragment : Fragment() {
                     val addresses =
                         geoCoder.getFromLocation(location.latitude, location.longitude, 1)
                     binding.apply {
-                        textAddress.post { textAddress.text = addresses[0].getAddressLine(0) }
+                        textAddress.post { textAddress.text = addresses.first().getAddressLine(0) }
                     }
                 } catch (e: IOException) {
                     e.printStackTrace()
@@ -146,9 +142,14 @@ class MapsFragment : Fragment() {
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     location,
-                    15f
+                    ZOOM
                 )
             )
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

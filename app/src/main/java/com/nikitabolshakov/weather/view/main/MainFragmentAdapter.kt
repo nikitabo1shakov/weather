@@ -1,5 +1,6 @@
 package com.nikitabolshakov.weather.view.main
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,19 @@ import com.nikitabolshakov.weather.model.data.Weather
 
 class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHolder>() {
 
+    inner class MainViewHolder(private val binding: RecyclerItemMainBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(weather: Weather) {
+            binding.apply {
+                mainFragmentRecyclerItemTextView.text = weather.city.city
+                root.setOnClickListener {
+                    onItemViewClickListener(weather)
+                }
+            }
+        }
+    }
+
     private var weatherData: List<Weather> = listOf()
     private var onItemViewClickListener: (Weather) -> Unit = {}
 
@@ -15,6 +29,7 @@ class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHol
         this.onItemViewClickListener = onItemViewClickListener
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setWeather(data: List<Weather>) {
         weatherData = data
         notifyDataSetChanged()
@@ -31,20 +46,5 @@ class MainFragmentAdapter : RecyclerView.Adapter<MainFragmentAdapter.MainViewHol
         holder.bind(weatherData[position])
     }
 
-    override fun getItemCount(): Int {
-        return weatherData.size
-    }
-
-    inner class MainViewHolder(private val binding: RecyclerItemMainBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(weather: Weather) {
-            binding.apply {
-                mainFragmentRecyclerItemTextView.text = weather.city.city
-                root.setOnClickListener {
-                    onItemViewClickListener(weather)
-                }
-            }
-        }
-    }
+    override fun getItemCount() = weatherData.size
 }

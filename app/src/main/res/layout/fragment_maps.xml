@@ -34,6 +34,6 @@
             android:text="@string/button_search_map" />
     </LinearLayout>
 
-    <include layout="@layout/google_maps" />
+    <include layout="@layout/google_maps_layout" />
 
 </LinearLayout>

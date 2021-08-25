@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nikitabolshakov.weather" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nikitabolshakov.weather">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -9,7 +10,6 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".app.App"
@@ -18,7 +18,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Weather" >
+        android:theme="@style/Theme.Weather"
+        tools:ignore="AllowBackup">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -36,9 +37,12 @@
             android:name=".contentprovider.HistoryContentProvider"
             android:authorities="weather.provider"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
 
-        <activity android:name=".view.MainActivity" >
+        <activity
+            android:name=".view.MainActivity"
+            tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,5 +50,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
