@@ -21,6 +21,16 @@
         android:theme="@style/Theme.Weather"
         tools:ignore="AllowBackup">
 
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_kotlin_logo" />
+
+        <service
+            android:name=".cloudmessage.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,4 +60,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
