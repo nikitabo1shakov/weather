@@ -31,7 +31,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             priority = NotificationCompat.PRIORITY_DEFAULT
         }
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createNotificationChannel(notificationManager)
@@ -52,6 +53,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     override fun onNewToken(token: String) {
-        Log.d("FIREBASEMSG", token)
+        Log.e("FIREBASEMSG", token)
     }
 }
