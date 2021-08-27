@@ -6,9 +6,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
-import com.nikitabolshakov.weather.view.contactlist.ContactListFragment
 import com.nikitabolshakov.weather.view.history.HistoryFragment
 import com.nikitabolshakov.weather.view.main.MainFragment
+import com.nikitabolshakov.weather.view.maps.MapsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-            R.id.menu_contact_list -> {
+            R.id.menu_maps -> {
                 supportFragmentManager.apply {
                     beginTransaction()
-                        .replace(R.id.container, ContactListFragment.newInstance())
+                        .replace(R.id.container, MapsFragment.newInstance())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
                 }

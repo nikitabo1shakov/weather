@@ -7,9 +7,11 @@
         android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/menu_title_history"
         app:showAsAction="always" />
+
     <item
-        android:id="@+id/menu_contact_list"
-        android:icon="@drawable/ic_contacts_list"
-        android:title="@string/menu_title_contact_list"
+        android:id="@+id/menu_maps"
+        android:icon="@drawable/ic_maps"
+        android:title="@string/menu_title_maps"
         app:showAsAction="ifRoom" />
+
 </menu>

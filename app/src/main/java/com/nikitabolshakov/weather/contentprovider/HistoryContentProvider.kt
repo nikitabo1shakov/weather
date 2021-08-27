@@ -46,7 +46,7 @@ class HistoryContentProvider : ContentProvider() {
         return null
     }
 
-    override fun insert(uri: Uri, values: ContentValues?): Uri? {
+    override fun insert(uri: Uri, values: ContentValues?): Uri {
         require(uriMatcher.match(uri) == URI_ALL) { "Wrong URI: $uri" }
         // Получаем доступ к данным
         val historyDao = getHistoryDao()
@@ -80,7 +80,7 @@ class HistoryContentProvider : ContentProvider() {
     override fun query(
         uri: Uri, projection: Array<String>?, selection: String?,
         selectionArgs: Array<String>?, sortOrder: String?
-    ): Cursor? {
+    ): Cursor {
         // Получаем доступ к данным
         val historyDao: HistoryDao = getHistoryDao()
         // При помощи UriMatcher определяем, запрашиваются все элементы или один

@@ -16,11 +16,18 @@ import com.nikitabolshakov.weather.viewmodel.history.HistoryViewModel
 
 class HistoryFragment : Fragment() {
 
+    companion object {
+        @JvmStatic
+        fun newInstance() = HistoryFragment()
+    }
+
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
+
     private val viewModel: HistoryViewModel by lazy {
         ViewModelProvider(this).get(HistoryViewModel::class.java)
     }
+
     private val adapter: HistoryFragmentAdapter by lazy {
         HistoryFragmentAdapter()
     }
@@ -67,11 +74,5 @@ class HistoryFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            HistoryFragment()
     }
 }
