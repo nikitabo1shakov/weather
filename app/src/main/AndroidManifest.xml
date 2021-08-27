@@ -26,7 +26,8 @@
             android:resource="@drawable/ic_kotlin_logo" />
 
         <service
-            android:name=".cloudmessage.MyFirebaseMessagingService">
+            android:name=".cloudmessage.MyFirebaseMessagingService"
+            tools:ignore="ExportedService,IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

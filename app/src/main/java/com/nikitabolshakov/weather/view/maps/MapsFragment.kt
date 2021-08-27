@@ -17,6 +17,8 @@ import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.FragmentMapsBinding
 import java.io.IOException
 
+private const val INITIAL_LATITUDE = 52.52000659999999
+private const val INITIAL_LONGITUDE = 13.404953999999975
 private const val ZOOM = 15f
 
 class MapsFragment : Fragment() {
@@ -31,7 +33,7 @@ class MapsFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
-        val initialPlace = LatLng(52.52000659999999, 13.404953999999975)
+        val initialPlace = LatLng(INITIAL_LATITUDE, INITIAL_LONGITUDE)
         googleMap.addMarker(
             MarkerOptions().position(initialPlace).title(getString(R.string.marker_start))
         )
