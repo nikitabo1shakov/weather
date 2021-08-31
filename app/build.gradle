@@ -6,13 +6,17 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+def signingkeyPropertiesFile = rootProject.file("signingkey.properties")
+def signingkeyProperties = new Properties()
+signingkeyProperties.load(new FileInputStream(signingkeyPropertiesFile))
+
 android {
     signingConfigs {
         my_key {
-            storeFile file('./weatherkey.jks')
-            storePassword '11111111'
-            keyAlias 'key'
-            keyPassword '11111111'
+            storeFile file(signingkeyProperties['storeFile'])
+            storePassword signingkeyProperties['storePassword']
+            keyAlias signingkeyProperties['keyAlias']
+            keyPassword signingkeyProperties['keyPassword']
         }
     }
     compileSdkVersion 30
