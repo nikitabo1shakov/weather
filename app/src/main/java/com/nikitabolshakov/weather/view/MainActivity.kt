@@ -1,9 +1,12 @@
 package com.nikitabolshakov.weather.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
 import com.nikitabolshakov.weather.view.history.HistoryFragment
@@ -23,6 +26,22 @@ class MainActivity : AppCompatActivity() {
                 .replace(binding.container.id, MainFragment.newInstance())
                 .commitNow()
         }
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.e(
+                    "ActivityFIREBASEMSG",
+                    "Fetching FCM registration token failed",
+                    task.exception
+                )
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            Log.e("ActivityFIREBASEMSG", token!!)
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
