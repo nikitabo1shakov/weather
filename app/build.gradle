@@ -7,6 +7,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        my_key {
+            storeFile file('./weatherkey.jks')
+            storePassword '11111111'
+            keyAlias 'key'
+            keyPassword '11111111'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -18,6 +26,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.my_key
     }
 
     buildTypes {
@@ -25,16 +34,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "MY_BUILD_TYPE", '"RELEASE"'
+            signingConfig signingConfigs.my_key
         }
         debug {
             versionNameSuffix 'debug'
             buildConfigField "String", "MY_BUILD_TYPE", '"DEBUG"'
+            signingConfig signingConfigs.my_key
         }
         beta {
             initWith debug
             debuggable true
             versionNameSuffix 'beta'
             buildConfigField "String", "MY_BUILD_TYPE", '"BETA"'
+            signingConfig signingConfigs.my_key
         }
     }
 
