@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
                 .replace(binding.container.id, MainFragment.newInstance())
                 .commitNow()
         }
+
+        Toast.makeText(this, getString(R.string.version_toast), Toast.LENGTH_LONG).show()
 
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
