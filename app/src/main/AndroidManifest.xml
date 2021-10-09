@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".app.App"
+        android:name="com.nikitabolshakov.weather.data.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +26,7 @@
             android:resource="@drawable/ic_kotlin_logo" />
 
         <service
-            android:name=".cloudmessage.MyFirebaseMessagingService"
+            android:name="com.nikitabolshakov.weather.data.firebasemessagingservice.MyFirebaseMessagingService"
             tools:ignore="ExportedService,IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -45,14 +45,14 @@
             android:value="@string/google_maps_key" />
 
         <provider
-            android:name=".contentprovider.HistoryContentProvider"
+            android:name="com.nikitabolshakov.weather.data.contentprovider.HistoryContentProvider"
             android:authorities="weather.provider"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
 
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.nikitabolshakov.weather.presentation.view.activity.main.MainActivity"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

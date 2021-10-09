@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="version_toast">DEBUG</string>
+    <string name="version_app">DEBUG Version</string>
 </resources>

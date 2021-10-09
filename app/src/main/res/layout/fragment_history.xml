@@ -7,12 +7,12 @@
     android:fitsSystemWindows="true">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/historyFragmentRecyclerview"
+        android:id="@+id/history_fragment_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <include
-        android:id="@+id/includedLoadingLayout"
-        layout="@layout/loading_layout" />
+        android:id="@+id/include_progress_bar_layout"
+        layout="@layout/layout_progress_bar" />
 </FrameLayout>
