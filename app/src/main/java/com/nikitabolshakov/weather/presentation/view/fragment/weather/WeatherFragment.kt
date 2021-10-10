@@ -60,18 +60,18 @@ class WeatherFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                binding.weather.makeVisible()
+                binding.weatherFragment.makeVisible()
                 binding.includeProgressBarLayout.progressBarLayout.makeGone()
                 setWeather(appState.weatherData.first())
             }
             is AppState.Loading -> {
-                binding.weather.makeGone()
+                binding.weatherFragment.makeGone()
                 binding.includeProgressBarLayout.progressBarLayout.makeVisible()
             }
             is AppState.Error -> {
-                binding.weather.makeVisible()
+                binding.weatherFragment.makeVisible()
                 binding.includeProgressBarLayout.progressBarLayout.makeGone()
-                binding.weather.showSnackBar(
+                binding.weatherFragment.showSnackBar(
                     getString(R.string.text_error),
                     getString(R.string.text_reload)
                 ) {

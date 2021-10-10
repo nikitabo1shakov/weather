@@ -23,4 +23,7 @@
     <string name="default_address">Red Square, 1, Moscow</string>
     <string name="button_search_map">Search</string>
     <string name="marker_start">Start</string>
+    <string name="menu_bnv_city_list">City List</string>
+    <string name="menu_bnv_history">History</string>
+    <string name="menu_bnv_google_maps">Google Maps</string>
 </resources>

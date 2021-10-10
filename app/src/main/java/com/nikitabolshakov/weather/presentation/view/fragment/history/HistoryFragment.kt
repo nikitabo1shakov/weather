@@ -38,7 +38,7 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.historyFragmentRecyclerView.adapter = adapter
+        binding.historyRecyclerView.adapter = adapter
         historyViewModel.historyLiveData.observe(viewLifecycleOwner) { renderData(it) }
         historyViewModel.getAllHistory()
     }
@@ -46,18 +46,18 @@ class HistoryFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                binding.historyFragmentRecyclerView.makeVisible()
+                binding.historyRecyclerView.makeVisible()
                 binding.includeProgressBarLayout.progressBarLayout.makeGone()
                 adapter.setData(appState.weatherData)
             }
             is AppState.Loading -> {
-                binding.historyFragmentRecyclerView.makeGone()
+                binding.historyRecyclerView.makeGone()
                 binding.includeProgressBarLayout.progressBarLayout.makeVisible()
             }
             is AppState.Error -> {
-                binding.historyFragmentRecyclerView.makeVisible()
+                binding.historyRecyclerView.makeVisible()
                 binding.includeProgressBarLayout.progressBarLayout.makeGone()
-                binding.historyFragmentRecyclerView.showSnackBar(
+                binding.historyRecyclerView.showSnackBar(
                     getString(R.string.text_error),
                     getString(R.string.text_reload)
                 ) {

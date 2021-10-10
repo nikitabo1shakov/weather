@@ -33,7 +33,7 @@ private const val IS_RUSSIAN_KEY = "LIST_OF_RUSSIAN_KEY"
 private const val REFRESH_PERIOD = 60000L
 private const val MINIMAL_DISTANCE = 100f
 
-class MainFragment : Fragment() {
+class CityListFragment : Fragment() {
 
     private val cityListViewModel: CityListViewModel by lazy {
         ViewModelProvider(this).get(CityListViewModel::class.java)
@@ -60,7 +60,7 @@ class MainFragment : Fragment() {
             openDetailsFragment(weather)
         }
 
-        binding.cityListFragmentRecyclerView.adapter = adapter
+        binding.cityListRecyclerView.adapter = adapter
         binding.changeCityListFab.setOnClickListener {
             changeWeatherDataSet()
             saveListOfTowns()
@@ -227,7 +227,7 @@ class MainFragment : Fragment() {
     private fun openDetailsFragment(weather: Weather) {
         activity?.supportFragmentManager?.apply {
             beginTransaction()
-                .replace(R.id.main_activity_container, WeatherFragment.newInstance(Bundle().apply {
+                .replace(R.id.container_main_activity, WeatherFragment.newInstance(Bundle().apply {
                     putParcelable(WeatherFragment.BUNDLE_EXTRA, weather)
                 }))
                 .addToBackStack("")
@@ -258,10 +258,10 @@ class MainFragment : Fragment() {
     private fun showWeatherDataSet() {
         if (isDataSetRus) {
             cityListViewModel.getWeatherFromLocalSourceRus()
-            binding.changeCityListFab.setImageResource(R.drawable.ic_earth)
+            binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
         } else {
             cityListViewModel.getWeatherFromLocalSourceWorld()
-            binding.changeCityListFab.setImageResource(R.drawable.ic_russia)
+            binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
         }
     }
 

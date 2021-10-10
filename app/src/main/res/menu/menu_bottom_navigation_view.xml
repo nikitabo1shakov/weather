@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bnv_city_list"
+        android:icon="@drawable/ic_bnv_city_list"
+        android:title="@string/menu_bnv_city_list" />
+    <item
+        android:id="@+id/bnv_history"
+        android:icon="@drawable/ic_bnv_history"
+        android:title="@string/menu_bnv_history" />
+    <item
+        android:id="@+id/bnv_google_maps"
+        android:icon="@drawable/ic_bnv_google_maps"
+        android:title="@string/menu_bnv_google_maps" />
+</menu>

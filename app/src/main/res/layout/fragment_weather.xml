@@ -11,10 +11,10 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/weather"
+            android:id="@+id/weather_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".presentation.view.fragment.citylist.MainFragment">
+            tools:context=".presentation.view.fragment.citylist.CityListFragment">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/header_icon_image_view"
@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/header_icon_image_view"
                 tools:text="Москва" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/city_coordinates_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/city_name_text_view"
                 tools:text="lt/ln: 55.755826, 37.617299900000035" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/weather_condition_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/city_coordinates_text_view"
                 tools:text="Облачно" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/temperature_label_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/weather_condition_text_view" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/temperature_value_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/temperature_label_text_view"
                 tools:text="+15" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/feels_like_label_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/temperature_value_text_view" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/feels_like_value_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,4 +109,5 @@
     <include
         android:id="@+id/include_progress_bar_layout"
         layout="@layout/layout_progress_bar" />
+
 </FrameLayout>

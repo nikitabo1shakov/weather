@@ -2,16 +2,14 @@ package com.nikitabolshakov.weather.presentation.view.activity.main
 
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
 import com.nikitabolshakov.weather.presentation.view.fragment.history.HistoryFragment
-import com.nikitabolshakov.weather.presentation.view.fragment.citylist.MainFragment
-import com.nikitabolshakov.weather.presentation.view.fragment.googlemaps.MapsFragment
+import com.nikitabolshakov.weather.presentation.view.fragment.citylist.CityListFragment
+import com.nikitabolshakov.weather.presentation.view.fragment.googlemaps.GoogleMapsFragment
 import com.nikitabolshakov.weather.utils.showToast
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(binding.mainActivityContainer.id, MainFragment())
+                .replace(binding.containerMainActivity.id, CityListFragment())
                 .commitNow()
         }
 
@@ -47,34 +45,67 @@ class MainActivity : AppCompatActivity() {
         })
 
         showToast(getString(R.string.version_app))
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_action, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.bnv_city_list -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, CityListFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                    true
+                }
+                R.id.bnv_history -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, HistoryFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                    true
+                }
+                R.id.bnv_google_maps -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, GoogleMapsFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                    true
+                }
+                else -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, CityListFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                    true
+                }
+            }
+        }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_history -> {
-                supportFragmentManager.apply {
-                    beginTransaction()
-                        .replace(R.id.main_activity_container, HistoryFragment())
+        binding.bottomNavigationView.setOnNavigationItemReselectedListener { item ->
+            when(item.itemId) {
+                R.id.bnv_city_list -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, CityListFragment())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
                 }
-                true
-            }
-            R.id.menu_maps -> {
-                supportFragmentManager.apply {
-                    beginTransaction()
-                        .replace(R.id.main_activity_container, MapsFragment())
+                R.id.bnv_history -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, HistoryFragment())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
                 }
-                true
+                R.id.bnv_google_maps -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, GoogleMapsFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                else -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container_main_activity, CityListFragment())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
             }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 }

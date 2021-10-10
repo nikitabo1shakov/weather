@@ -15,7 +15,7 @@ class CityListFragmentAdapter : RecyclerView.Adapter<CityListFragmentAdapter.Cit
 
         fun bind(weather: Weather) {
             binding.apply {
-                cityListFragmentRecyclerItemTextView.text = weather.city.city
+                itemCityListRecyclerView.text = weather.city.city
                 root.setOnClickListener {
                     onItemViewClickListener(weather)
                 }

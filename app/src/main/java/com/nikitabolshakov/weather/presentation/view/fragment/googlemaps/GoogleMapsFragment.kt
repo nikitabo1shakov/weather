@@ -21,7 +21,7 @@ private const val INITIAL_LATITUDE = 52.52000659999999
 private const val INITIAL_LONGITUDE = 13.404953999999975
 private const val ZOOM = 15f
 
-class MapsFragment : Fragment() {
+class GoogleMapsFragment : Fragment() {
 
     private lateinit var map: GoogleMap
 
@@ -56,7 +56,7 @@ class MapsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment =
-            childFragmentManager.findFragmentById(R.id.maps_fragment) as SupportMapFragment?
+            childFragmentManager.findFragmentById(R.id.google_maps_fragment) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
         initSearchByAddress()
     }
