@@ -2,8 +2,8 @@ package com.nikitabolshakov.weather.data.repository.local
 
 import com.nikitabolshakov.weather.data.model.local.Weather
 import com.nikitabolshakov.weather.data.room.HistoryDao
-import com.nikitabolshakov.weather.utils.convertHistoryEntityToWeather
-import com.nikitabolshakov.weather.utils.convertWeatherToEntity
+import com.nikitabolshakov.weather.data.utils.convertHistoryEntityToWeather
+import com.nikitabolshakov.weather.data.utils.convertWeatherToEntity
 
 
 class LocalRepositoryImpl(

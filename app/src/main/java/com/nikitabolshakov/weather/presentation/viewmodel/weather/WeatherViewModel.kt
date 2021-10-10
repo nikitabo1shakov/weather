@@ -2,7 +2,7 @@ package com.nikitabolshakov.weather.presentation.viewmodel.weather
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikitabolshakov.weather.utils.convertDtoToModel
+import com.nikitabolshakov.weather.data.utils.convertDtoToModel
 import com.nikitabolshakov.weather.data.app.App.Companion.getHistoryDao
 import com.nikitabolshakov.weather.data.model.response.FactDTO
 import com.nikitabolshakov.weather.data.model.response.WeatherDTO

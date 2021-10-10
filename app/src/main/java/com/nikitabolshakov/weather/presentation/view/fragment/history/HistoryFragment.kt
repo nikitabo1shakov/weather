@@ -10,9 +10,9 @@ import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.FragmentHistoryBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.viewmodel.history.HistoryViewModel
-import com.nikitabolshakov.weather.utils.makeGone
-import com.nikitabolshakov.weather.utils.makeVisible
-import com.nikitabolshakov.weather.utils.showSnackBar
+import com.nikitabolshakov.weather.presentation.utils.makeGone
+import com.nikitabolshakov.weather.presentation.utils.makeVisible
+import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 
 class HistoryFragment : Fragment() {
 

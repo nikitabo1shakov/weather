@@ -12,9 +12,9 @@ import com.nikitabolshakov.weather.data.model.local.Weather
 import com.nikitabolshakov.weather.databinding.FragmentWeatherBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.viewmodel.weather.WeatherViewModel
-import com.nikitabolshakov.weather.utils.makeGone
-import com.nikitabolshakov.weather.utils.makeVisible
-import com.nikitabolshakov.weather.utils.showSnackBar
+import com.nikitabolshakov.weather.presentation.utils.makeGone
+import com.nikitabolshakov.weather.presentation.utils.makeVisible
+import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import com.squareup.picasso.Picasso
 
 class WeatherFragment : Fragment() {

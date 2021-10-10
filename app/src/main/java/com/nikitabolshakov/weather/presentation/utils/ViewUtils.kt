@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.utils
+package com.nikitabolshakov.weather.presentation.utils
 
 import android.app.Activity
 import android.view.Gravity

@@ -24,9 +24,9 @@ import com.nikitabolshakov.weather.databinding.FragmentCityListBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment
 import com.nikitabolshakov.weather.presentation.viewmodel.citylist.CityListViewModel
-import com.nikitabolshakov.weather.utils.makeGone
-import com.nikitabolshakov.weather.utils.makeVisible
-import com.nikitabolshakov.weather.utils.showSnackBar
+import com.nikitabolshakov.weather.presentation.utils.makeGone
+import com.nikitabolshakov.weather.presentation.utils.makeVisible
+import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import java.io.IOException
 
 private const val IS_RUSSIAN_KEY = "LIST_OF_RUSSIAN_KEY"
@@ -35,13 +35,13 @@ private const val MINIMAL_DISTANCE = 100f
 
 class CityListFragment : Fragment() {
 
+    private var isDataSetRus: Boolean = true
+
     private val cityListViewModel: CityListViewModel by lazy {
         ViewModelProvider(this).get(CityListViewModel::class.java)
     }
 
     private val adapter = CityListFragmentAdapter()
-
-    private var isDataSetRus: Boolean = true
 
     private var _binding: FragmentCityListBinding? = null
     private val binding get() = _binding!!

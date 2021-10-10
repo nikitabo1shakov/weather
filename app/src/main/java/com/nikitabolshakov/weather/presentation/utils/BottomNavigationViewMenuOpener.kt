@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.utils
+package com.nikitabolshakov.weather.presentation.utils
 
 import androidx.fragment.app.FragmentManager
 import com.nikitabolshakov.weather.R

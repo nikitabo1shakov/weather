@@ -8,8 +8,8 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
 import com.nikitabolshakov.weather.presentation.view.fragment.citylist.CityListFragment
-import com.nikitabolshakov.weather.utils.BottomNavigationViewMenuOpener
-import com.nikitabolshakov.weather.utils.showToast
+import com.nikitabolshakov.weather.presentation.utils.BottomNavigationViewMenuOpener
+import com.nikitabolshakov.weather.presentation.utils.showToast
 
 class MainActivity : AppCompatActivity() {
 

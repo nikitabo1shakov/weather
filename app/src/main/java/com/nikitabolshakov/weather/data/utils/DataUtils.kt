@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.utils
+package com.nikitabolshakov.weather.data.utils
 
 import com.nikitabolshakov.weather.data.model.response.WeatherDTO
 import com.nikitabolshakov.weather.data.model.local.City
