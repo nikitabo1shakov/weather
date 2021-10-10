@@ -52,7 +52,7 @@
             tools:ignore="ExportedContentProvider" />
 
         <activity
-            android:name="com.nikitabolshakov.weather.presentation.view.activity.main.MainActivity"
+            android:name=".presentation.view.activity.splash.SplashActivity"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,6 +60,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".presentation.view.activity.main.MainActivity" />
+
     </application>
 
 </manifest>

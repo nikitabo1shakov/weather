@@ -15,7 +15,9 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_maps.xml" value="0.2723076923076923" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_russia.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_splash_logo.xml" value="0.22037037037037038" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.1453804347826087" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_city_list.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_contact_list.xml" value="0.1453804347826087" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_details.xml" value="0.1453804347826087" />
