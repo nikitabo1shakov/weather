@@ -5,6 +5,7 @@ import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.presentation.view.fragment.citylist.CityListFragment
 import com.nikitabolshakov.weather.presentation.view.fragment.googlemaps.GoogleMapsFragment
 import com.nikitabolshakov.weather.presentation.view.fragment.history.HistoryFragment
+import com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager.InfoFragment
 
 class BottomNavigationViewMenuOpener(
     private val fragmentManager: FragmentManager
@@ -27,6 +28,13 @@ class BottomNavigationViewMenuOpener(
     fun openGoogleMapsFragment() {
         fragmentManager.beginTransaction()
             .replace(R.id.container_main_activity, GoogleMapsFragment())
+            .addToBackStack("")
+            .commitAllowingStateLoss()
+    }
+
+    fun openInfoFragment() {
+        fragmentManager.beginTransaction()
+            .replace(R.id.container_main_activity, InfoFragment())
             .addToBackStack("")
             .commitAllowingStateLoss()
     }

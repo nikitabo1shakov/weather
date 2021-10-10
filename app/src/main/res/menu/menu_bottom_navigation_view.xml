@@ -13,4 +13,8 @@
         android:id="@+id/bnv_google_maps"
         android:icon="@drawable/ic_bnv_google_maps"
         android:title="@string/menu_bnv_google_maps" />
+    <item
+        android:id="@+id/bnv_info"
+        android:icon="@drawable/ic_bnv_info"
+        android:title="@string/menu_bnv_info" />
 </menu>

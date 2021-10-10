@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
                         bnvMenuOpener.openGoogleMapsFragment()
                         true
                     }
+                    R.id.bnv_info -> {
+                        bnvMenuOpener.openInfoFragment()
+                        true
+                    }
                     else -> {
                         bnvMenuOpener.openCityListFragment()
                         true
@@ -79,6 +83,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.bnv_google_maps -> {
                         bnvMenuOpener.openGoogleMapsFragment()
+                    }
+                    R.id.bnv_info -> {
+                        bnvMenuOpener.openInfoFragment()
                     }
                     else -> {
                         bnvMenuOpener.openCityListFragment()

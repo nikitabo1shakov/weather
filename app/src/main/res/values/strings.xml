@@ -26,5 +26,6 @@
     <string name="menu_bnv_city_list">City List</string>
     <string name="menu_bnv_history">History</string>
     <string name="menu_bnv_google_maps">Google Maps</string>
+    <string name="menu_bnv_info">Info</string>
     <string name="name_app_splash_activity">WEATHER</string>
 </resources>
