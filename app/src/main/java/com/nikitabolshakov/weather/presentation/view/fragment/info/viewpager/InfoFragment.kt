@@ -5,7 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.nikitabolshakov.weather.databinding.FragmentInfoBinding
+import me.relex.circleindicator.CircleIndicator
+
+private const val SCREEN_CITY_LIST_FRAGMENT = 0
+private const val SCREEN_HISTORY_FRAGMENT = 1
+private const val SCREEN_GOOGLE_MAPS_FRAGMENT = 2
+private const val SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT = 3
+private const val SCREEN_CHANGE_CITY_LIST_FRAGMENT = 4
 
 class InfoFragment : Fragment() {
 
@@ -25,6 +33,37 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.infoViewPager.adapter = InfoFragmentAdapter(childFragmentManager)
+
+        val infoViewPager: ViewPager = binding.infoViewPager
+        val indicator: CircleIndicator = binding.indicator
+
+        infoViewPager.adapter
+        indicator.setViewPager(infoViewPager)
+        indicator.createIndicators(5, 0)
+
+        binding.infoViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    SCREEN_CITY_LIST_FRAGMENT -> indicator.animatePageSelected(0)
+                    SCREEN_HISTORY_FRAGMENT -> indicator.animatePageSelected(1)
+                    SCREEN_GOOGLE_MAPS_FRAGMENT -> indicator.animatePageSelected(2)
+                    SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT -> indicator.animatePageSelected(
+                        3
+                    )
+                    SCREEN_CHANGE_CITY_LIST_FRAGMENT -> indicator.animatePageSelected(4)
+                }
+            }
+
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
     }
 
     override fun onDestroyView() {
