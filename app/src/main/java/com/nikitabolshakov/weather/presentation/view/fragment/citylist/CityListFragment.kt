@@ -27,6 +27,7 @@ import com.nikitabolshakov.weather.presentation.viewmodel.citylist.CityListViewM
 import com.nikitabolshakov.weather.presentation.utils.makeGone
 import com.nikitabolshakov.weather.presentation.utils.makeVisible
 import com.nikitabolshakov.weather.presentation.utils.showSnackBar
+import com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager.InfoFragment
 import java.io.IOException
 
 private const val IS_RUSSIAN_KEY = "LIST_OF_RUSSIAN_KEY"
@@ -56,18 +57,25 @@ class CityListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        adapter.setOnItemViewClickListener { weather ->
-            openDetailsFragment(weather)
-        }
-
         binding.cityListRecyclerView.adapter = adapter
-        binding.changeCityListFab.setOnClickListener {
-            changeWeatherDataSet()
-            saveListOfTowns()
+
+        adapter.setOnItemViewClickListener { weather ->
+            openWeatherFragment(weather)
         }
 
-        binding.locationSearchingAndGetWeatherFab.setOnClickListener {
-            checkPermission()
+        with(binding) {
+            locationSearchingAndGetWeatherFab.setOnClickListener {
+                checkPermission()
+            }
+
+            changeCityListFab.setOnClickListener {
+                changeWeatherDataSet()
+                saveListOfTowns()
+            }
+
+            infoFab.setOnClickListener {
+                openInfoFragment()
+            }
         }
 
         cityListViewModel.getData().observe(viewLifecycleOwner) { renderData(it) }
@@ -208,7 +216,7 @@ class CityListFragment : Fragment() {
                 .setTitle(getString(R.string.dialog_address_title))
                 .setMessage(address)
                 .setPositiveButton(getString(R.string.dialog_address_get_weather)) { _, _ ->
-                    openDetailsFragment(
+                    openWeatherFragment(
                         Weather(
                             City(
                                 address,
@@ -224,7 +232,7 @@ class CityListFragment : Fragment() {
         }
     }
 
-    private fun openDetailsFragment(weather: Weather) {
+    private fun openWeatherFragment(weather: Weather) {
         activity?.supportFragmentManager?.apply {
             beginTransaction()
                 .replace(R.id.container_main_activity, WeatherFragment.newInstance(Bundle().apply {
@@ -262,6 +270,15 @@ class CityListFragment : Fragment() {
         } else {
             cityListViewModel.getWeatherFromLocalSourceWorld()
             binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
+        }
+    }
+
+    private fun openInfoFragment() {
+        activity?.supportFragmentManager?.apply {
+            beginTransaction()
+                .replace(R.id.container_main_activity, InfoFragment())
+                .addToBackStack("")
+                .commitAllowingStateLoss()
         }
     }
 
