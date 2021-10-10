@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.data.models.local
+package com.nikitabolshakov.weather.data.model.local
 
 fun getWorldCities() = listOf(
     Weather(City("Лондон", 51.5085300, -0.1257400), 1, 2),

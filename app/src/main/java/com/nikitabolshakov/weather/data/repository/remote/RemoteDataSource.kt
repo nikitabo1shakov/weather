@@ -2,7 +2,7 @@ package com.nikitabolshakov.weather.data.repository.remote
 
 import com.google.gson.GsonBuilder
 import com.nikitabolshakov.weather.BuildConfig
-import com.nikitabolshakov.weather.data.models.response.WeatherDTO
+import com.nikitabolshakov.weather.data.model.response.WeatherDTO
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

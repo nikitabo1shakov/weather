@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nikitabolshakov.weather.utils.convertDtoToModel
 import com.nikitabolshakov.weather.data.app.App.Companion.getHistoryDao
-import com.nikitabolshakov.weather.data.models.response.FactDTO
-import com.nikitabolshakov.weather.data.models.response.WeatherDTO
-import com.nikitabolshakov.weather.data.models.local.Weather
+import com.nikitabolshakov.weather.data.model.response.FactDTO
+import com.nikitabolshakov.weather.data.model.response.WeatherDTO
+import com.nikitabolshakov.weather.data.model.local.Weather
 import com.nikitabolshakov.weather.data.repository.remote.RemoteDataSource
 import com.nikitabolshakov.weather.data.repository.weather.WeatherRepository
 import com.nikitabolshakov.weather.data.repository.weather.WeatherRepositoryImpl

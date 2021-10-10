@@ -18,8 +18,8 @@ import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.data.models.local.City
-import com.nikitabolshakov.weather.data.models.local.Weather
+import com.nikitabolshakov.weather.data.model.local.City
+import com.nikitabolshakov.weather.data.model.local.Weather
 import com.nikitabolshakov.weather.databinding.FragmentCityListBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment

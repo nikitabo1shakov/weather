@@ -1,6 +1,6 @@
 package com.nikitabolshakov.weather.data.repository.local
 
-import com.nikitabolshakov.weather.data.models.local.Weather
+import com.nikitabolshakov.weather.data.model.local.Weather
 
 interface LocalRepository {
 
