@@ -12,6 +12,7 @@ import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_GOOGLE_MAPS_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ZoomOutPageTransformer
 import me.relex.circleindicator.CircleIndicator
 
 class InfoFragment : Fragment() {
@@ -39,6 +40,8 @@ class InfoFragment : Fragment() {
         infoViewPager.adapter
         indicator.setViewPager(infoViewPager)
         indicator.createIndicators(5, 0)
+
+        infoViewPager.setPageTransformer(true, ZoomOutPageTransformer())
 
         binding.infoViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
