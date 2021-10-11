@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.nikitabolshakov.weather.databinding.FragmentInfoBinding
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CHANGE_CITY_LIST_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CITY_LIST_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_GOOGLE_MAPS_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
 import me.relex.circleindicator.CircleIndicator
-
-private const val SCREEN_CITY_LIST_FRAGMENT = 0
-private const val SCREEN_HISTORY_FRAGMENT = 1
-private const val SCREEN_GOOGLE_MAPS_FRAGMENT = 2
-private const val SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT = 3
-private const val SCREEN_CHANGE_CITY_LIST_FRAGMENT = 4
 
 class InfoFragment : Fragment() {
 

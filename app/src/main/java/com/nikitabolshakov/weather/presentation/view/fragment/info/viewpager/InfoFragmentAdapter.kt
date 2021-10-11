@@ -3,13 +3,12 @@ package com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CHANGE_CITY_LIST_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CITY_LIST_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_GOOGLE_MAPS_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
 import com.nikitabolshakov.weather.presentation.view.fragment.info.screen.*
-
-private const val SCREEN_CITY_LIST_FRAGMENT = 0
-private const val SCREEN_HISTORY_FRAGMENT = 1
-private const val SCREEN_GOOGLE_MAPS_FRAGMENT = 2
-private const val SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT = 3
-private const val SCREEN_CHANGE_CITY_LIST_FRAGMENT = 4
 
 class InfoFragmentAdapter(
     fragmentManager: FragmentManager
