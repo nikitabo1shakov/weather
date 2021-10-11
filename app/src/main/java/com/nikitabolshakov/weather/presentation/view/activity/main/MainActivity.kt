@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
                         bnvMenuOpener.openGoogleMapsFragment()
                         true
                     }
+                    R.id.bnv_settings -> {
+                        showToast("Здесь будут настройки App")
+                        true
+                    }
                     else -> {
                         bnvMenuOpener.openHomeFragment()
                         true
@@ -79,6 +83,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.bnv_google_maps -> {
                         bnvMenuOpener.openGoogleMapsFragment()
+                    }
+                    R.id.bnv_settings -> {
+                        showToast("Здесь будут настройки App")
                     }
                     else -> {
                         bnvMenuOpener.openHomeFragment()

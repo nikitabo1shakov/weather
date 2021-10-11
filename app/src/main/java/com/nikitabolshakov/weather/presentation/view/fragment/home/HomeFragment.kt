@@ -25,7 +25,7 @@ import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.utils.makeGone
 import com.nikitabolshakov.weather.presentation.utils.makeVisible
 import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment
-import com.nikitabolshakov.weather.presentation.viewmodel.citylist.CityListViewModel
+import com.nikitabolshakov.weather.presentation.viewmodel.home.HomeViewModel
 import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager.InfoFragment
 import java.io.IOException
@@ -38,8 +38,8 @@ class HomeFragment : Fragment() {
 
     private var isDataSetRus: Boolean = true
 
-    private val cityListViewModel: CityListViewModel by lazy {
-        ViewModelProvider(this).get(CityListViewModel::class.java)
+    private val homeViewModel: HomeViewModel by lazy {
+        ViewModelProvider(this).get(HomeViewModel::class.java)
     }
 
     private val adapter = HomeFragmentAdapter()
@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        cityListViewModel.getData().observe(viewLifecycleOwner) { renderData(it) }
+        homeViewModel.getData().observe(viewLifecycleOwner) { renderData(it) }
         loadListOfTowns()
         showWeatherDataSet()
     }
@@ -265,10 +265,10 @@ class HomeFragment : Fragment() {
 
     private fun showWeatherDataSet() {
         if (isDataSetRus) {
-            cityListViewModel.getWeatherFromLocalSourceRus()
+            homeViewModel.getWeatherFromLocalSourceRus()
             binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
         } else {
-            cityListViewModel.getWeatherFromLocalSourceWorld()
+            homeViewModel.getWeatherFromLocalSourceWorld()
             binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
         }
     }
@@ -298,9 +298,9 @@ class HomeFragment : Fragment() {
                     getString(R.string.text_reload)
                 ) {
                     if (isDataSetRus) {
-                        cityListViewModel.getWeatherFromLocalSourceRus()
+                        homeViewModel.getWeatherFromLocalSourceRus()
                     } else {
-                        cityListViewModel.getWeatherFromLocalSourceWorld()
+                        homeViewModel.getWeatherFromLocalSourceWorld()
                     }
                 }
             }

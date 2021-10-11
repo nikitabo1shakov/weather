@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.presentation.viewmodel.citylist
+package com.nikitabolshakov.weather.presentation.viewmodel.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,7 @@ import com.nikitabolshakov.weather.data.repository.main.MainRepositoryImpl
 import com.nikitabolshakov.weather.presentation.state.AppState
 import java.lang.Thread.sleep
 
-class CityListViewModel(
+class HomeViewModel(
     private val mainRepository: MainRepository = MainRepositoryImpl()
 ) : ViewModel() {
 
