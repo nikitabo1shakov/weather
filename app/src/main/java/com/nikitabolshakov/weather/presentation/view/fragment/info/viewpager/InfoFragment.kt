@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.nikitabolshakov.weather.databinding.FragmentInfoBinding
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CHANGE_CITY_LIST_FRAGMENT
-import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_CITY_LIST_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HOME_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_GOOGLE_MAPS_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
@@ -47,7 +47,7 @@ class InfoFragment : Fragment() {
 
             override fun onPageSelected(position: Int) {
                 when (position) {
-                    SCREEN_CITY_LIST_FRAGMENT -> indicator.animatePageSelected(0)
+                    SCREEN_HOME_FRAGMENT -> indicator.animatePageSelected(0)
                     SCREEN_HISTORY_FRAGMENT -> indicator.animatePageSelected(1)
                     SCREEN_GOOGLE_MAPS_FRAGMENT -> indicator.animatePageSelected(2)
                     SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT -> indicator.animatePageSelected(

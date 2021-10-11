@@ -17,7 +17,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_city_list_recycler_view" />
+            tools:listitem="@layout/item_home_recycler_view" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/location_searching_and_get_weather_fab"

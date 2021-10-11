@@ -2,7 +2,7 @@ package com.nikitabolshakov.weather.presentation.utils
 
 import androidx.fragment.app.FragmentManager
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.presentation.view.fragment.citylist.CityListFragment
+import com.nikitabolshakov.weather.presentation.view.fragment.home.HomeFragment
 import com.nikitabolshakov.weather.presentation.view.fragment.googlemaps.GoogleMapsFragment
 import com.nikitabolshakov.weather.presentation.view.fragment.history.HistoryFragment
 
@@ -10,9 +10,9 @@ class BottomNavigationViewMenuOpener(
     private val fragmentManager: FragmentManager
 ) {
 
-    fun openCityListFragment() {
+    fun openHomeFragment() {
         fragmentManager.beginTransaction()
-            .replace(R.id.container_main_activity, CityListFragment())
+            .replace(R.id.container_main_activity, HomeFragment())
             .addToBackStack("")
             .commitAllowingStateLoss()
     }

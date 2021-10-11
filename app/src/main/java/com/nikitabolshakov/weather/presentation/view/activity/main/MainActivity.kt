@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
-import com.nikitabolshakov.weather.presentation.view.fragment.citylist.CityListFragment
+import com.nikitabolshakov.weather.presentation.view.fragment.home.HomeFragment
 import com.nikitabolshakov.weather.presentation.utils.BottomNavigationViewMenuOpener
 import com.nikitabolshakov.weather.presentation.utils.showToast
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(binding.containerMainActivity.id, CityListFragment())
+                .replace(binding.containerMainActivity.id, HomeFragment())
                 .commitNow()
         }
 
@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             bottomNavigationView.setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
-                    R.id.bnv_city_list -> {
-                        bnvMenuOpener.openCityListFragment()
+                    R.id.bnv_home -> {
+                        bnvMenuOpener.openHomeFragment()
                         true
                     }
                     R.id.bnv_history -> {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     else -> {
-                        bnvMenuOpener.openCityListFragment()
+                        bnvMenuOpener.openHomeFragment()
                         true
                     }
                 }
@@ -71,8 +71,8 @@ class MainActivity : AppCompatActivity() {
 
             bottomNavigationView.setOnNavigationItemReselectedListener { item ->
                 when (item.itemId) {
-                    R.id.bnv_city_list -> {
-                        bnvMenuOpener.openCityListFragment()
+                    R.id.bnv_home -> {
+                        bnvMenuOpener.openHomeFragment()
                     }
                     R.id.bnv_history -> {
                         bnvMenuOpener.openHistoryFragment()
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                         bnvMenuOpener.openGoogleMapsFragment()
                     }
                     else -> {
-                        bnvMenuOpener.openCityListFragment()
+                        bnvMenuOpener.openHomeFragment()
                     }
                 }
             }

@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.presentation.view.fragment.citylist
+package com.nikitabolshakov.weather.presentation.view.fragment.home
 
 import android.Manifest
 import android.content.Context
@@ -20,12 +20,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
 import com.nikitabolshakov.weather.data.model.local.City
 import com.nikitabolshakov.weather.data.model.local.Weather
-import com.nikitabolshakov.weather.databinding.FragmentCityListBinding
+import com.nikitabolshakov.weather.databinding.FragmentHomeBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
-import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment
-import com.nikitabolshakov.weather.presentation.viewmodel.citylist.CityListViewModel
 import com.nikitabolshakov.weather.presentation.utils.makeGone
 import com.nikitabolshakov.weather.presentation.utils.makeVisible
+import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment
+import com.nikitabolshakov.weather.presentation.viewmodel.citylist.CityListViewModel
 import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager.InfoFragment
 import java.io.IOException
@@ -34,7 +34,7 @@ private const val IS_RUSSIAN_KEY = "LIST_OF_RUSSIAN_KEY"
 private const val REFRESH_PERIOD = 60000L
 private const val MINIMAL_DISTANCE = 100f
 
-class CityListFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     private var isDataSetRus: Boolean = true
 
@@ -42,16 +42,16 @@ class CityListFragment : Fragment() {
         ViewModelProvider(this).get(CityListViewModel::class.java)
     }
 
-    private val adapter = CityListFragmentAdapter()
+    private val adapter = HomeFragmentAdapter()
 
-    private var _binding: FragmentCityListBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCityListBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

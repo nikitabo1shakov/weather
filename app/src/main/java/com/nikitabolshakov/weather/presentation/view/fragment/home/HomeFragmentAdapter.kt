@@ -1,16 +1,16 @@
-package com.nikitabolshakov.weather.presentation.view.fragment.citylist
+package com.nikitabolshakov.weather.presentation.view.fragment.home
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitabolshakov.weather.data.model.local.Weather
-import com.nikitabolshakov.weather.databinding.ItemCityListRecyclerViewBinding
+import com.nikitabolshakov.weather.databinding.ItemHomeRecyclerViewBinding
 
-class CityListFragmentAdapter : RecyclerView.Adapter<CityListFragmentAdapter.CityListViewHolder>() {
+class HomeFragmentAdapter : RecyclerView.Adapter<HomeFragmentAdapter.HomeViewHolder>() {
 
-    inner class CityListViewHolder(
-        private val binding: ItemCityListRecyclerViewBinding
+    inner class HomeViewHolder(
+        private val binding: ItemHomeRecyclerViewBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(weather: Weather) {
@@ -36,14 +36,14 @@ class CityListFragmentAdapter : RecyclerView.Adapter<CityListFragmentAdapter.Cit
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityListViewHolder {
-        val binding = ItemCityListRecyclerViewBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+        val binding = ItemHomeRecyclerViewBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return CityListViewHolder(binding)
+        return HomeViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CityListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         holder.bind(weatherData[position])
     }
 

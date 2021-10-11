@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bnv_city_list"
-        android:icon="@drawable/ic_bnv_city_list"
-        android:title="@string/menu_bnv_city_list" />
+        android:id="@+id/bnv_home"
+        android:icon="@drawable/ic_bnv_home"
+        android:title="@string/menu_bnv_home" />
     <item
         android:id="@+id/bnv_history"
         android:icon="@drawable/ic_bnv_history"

@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.nikitabolshakov.weather.databinding.FragmentScreenCityListBinding
+import com.nikitabolshakov.weather.databinding.FragmentScreenHomeBinding
 
-class ScreenCityListFragment : Fragment() {
+class ScreenHomeFragment : Fragment() {
 
-    private var _binding: FragmentScreenCityListBinding? = null
+    private var _binding: FragmentScreenHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class ScreenCityListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentScreenCityListBinding.inflate(inflater, container, false)
+        _binding = FragmentScreenHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
