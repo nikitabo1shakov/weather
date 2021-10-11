@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nikitabolshakov.weather.data.model.local.Weather
+import com.nikitabolshakov.weather.data.model.Weather
 import com.nikitabolshakov.weather.databinding.ItemHistoryRecyclerViewBinding
 
 class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.HistoryViewHolder>() {

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -13,6 +15,4 @@
     <color name="light_blue_a_200_secondary_dark_color">#0094cc</color>
     <color name="light_blue_50">#e1f5fe</color>
     <color name="light_blue_200_transparent">#81d4faFF</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>

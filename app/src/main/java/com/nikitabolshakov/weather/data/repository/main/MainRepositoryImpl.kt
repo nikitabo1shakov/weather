@@ -1,8 +1,8 @@
 package com.nikitabolshakov.weather.data.repository.main
 
-import com.nikitabolshakov.weather.data.model.local.Weather
-import com.nikitabolshakov.weather.data.model.local.getRussianCities
-import com.nikitabolshakov.weather.data.model.local.getWorldCities
+import com.nikitabolshakov.weather.data.model.Weather
+import com.nikitabolshakov.weather.data.model.getRussianCities
+import com.nikitabolshakov.weather.data.model.getWorldCities
 
 class MainRepositoryImpl : MainRepository {
 

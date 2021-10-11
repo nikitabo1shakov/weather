@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.data.model.local.City
-import com.nikitabolshakov.weather.data.model.local.Weather
+import com.nikitabolshakov.weather.data.model.City
+import com.nikitabolshakov.weather.data.model.Weather
 import com.nikitabolshakov.weather.databinding.FragmentWeatherBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.viewmodel.weather.WeatherViewModel

@@ -1,4 +1,4 @@
-package com.nikitabolshakov.weather.data.model.local
+package com.nikitabolshakov.weather.data.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

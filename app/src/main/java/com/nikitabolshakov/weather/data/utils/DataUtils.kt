@@ -1,9 +1,9 @@
 package com.nikitabolshakov.weather.data.utils
 
 import com.nikitabolshakov.weather.data.model.response.WeatherDTO
-import com.nikitabolshakov.weather.data.model.local.City
-import com.nikitabolshakov.weather.data.model.local.Weather
-import com.nikitabolshakov.weather.data.model.local.getDefaultCity
+import com.nikitabolshakov.weather.data.model.City
+import com.nikitabolshakov.weather.data.model.Weather
+import com.nikitabolshakov.weather.data.model.getDefaultCity
 import com.nikitabolshakov.weather.data.room.HistoryEntity
 
 fun convertDtoToModel(weatherDTO: WeatherDTO): List<Weather> {
