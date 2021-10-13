@@ -12,21 +12,21 @@ class BottomNavigationViewMenuOpener(
 
     fun openHomeFragment() {
         fragmentManager.beginTransaction()
-            .replace(R.id.container_main_activity, HomeFragment())
+            .replace(R.id.container, HomeFragment())
             .addToBackStack("")
             .commitAllowingStateLoss()
     }
 
     fun openHistoryFragment() {
         fragmentManager.beginTransaction()
-            .replace(R.id.container_main_activity, HistoryFragment())
+            .replace(R.id.container, HistoryFragment())
             .addToBackStack("")
             .commitAllowingStateLoss()
     }
 
     fun openGoogleMapsFragment() {
         fragmentManager.beginTransaction()
-            .replace(R.id.container_main_activity, GoogleMapsFragment())
+            .replace(R.id.container, GoogleMapsFragment())
             .addToBackStack("")
             .commitAllowingStateLoss()
     }

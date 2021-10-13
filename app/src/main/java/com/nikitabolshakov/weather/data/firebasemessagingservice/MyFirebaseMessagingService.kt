@@ -25,7 +25,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun showNotification(title: String, message: String) {
         val notificationBuilder = NotificationCompat.Builder(applicationContext, CHANNEL_ID).apply {
-            setSmallIcon(R.drawable.ic_kotlin_logo)
+            setSmallIcon(R.drawable.image_kotlin)
             setContentTitle(title)
             setContentText(message)
             priority = NotificationCompat.PRIORITY_DEFAULT

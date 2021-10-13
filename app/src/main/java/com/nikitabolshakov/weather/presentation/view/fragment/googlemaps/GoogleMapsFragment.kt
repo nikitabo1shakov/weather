@@ -81,7 +81,7 @@ class GoogleMapsFragment : Fragment() {
     }
 
     private fun addMarkerToArray(location: LatLng) {
-        val marker = setMarker(location, markers.size.toString(), R.drawable.ic_map_pin)
+        val marker = setMarker(location, markers.size.toString(), R.drawable.image_map_pin)
         markers.add(marker)
     }
 
@@ -139,7 +139,7 @@ class GoogleMapsFragment : Fragment() {
             addresses.first().longitude
         )
         view.post {
-            setMarker(location, searchText, R.drawable.ic_map_marker)
+            setMarker(location, searchText, R.drawable.image_map_marker)
             map.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     location,

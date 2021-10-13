@@ -13,4 +13,5 @@
     <dimen name="recycler_item_layout_margin_7_dp">7dp</dimen>
     <dimen name="town_header_height">100dp</dimen>
     <dimen name="fab_location_icon_size">45dp</dimen>
+    <dimen name="name_app_on_splash">30sp</dimen>
 </resources>

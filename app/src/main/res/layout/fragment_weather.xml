@@ -16,7 +16,7 @@
             tools:context=".presentation.view.fragment.home.HomeFragment">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/header_icon_image_view"
+                android:id="@+id/header_icon"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/town_header_height"
                 android:scaleType="fitXY"
@@ -33,7 +33,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/header_icon_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/header_icon"
                 tools:text="Москва" />
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -23,7 +23,7 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_kotlin_logo" />
+            android:resource="@drawable/image_kotlin" />
 
         <service
             android:name="com.nikitabolshakov.weather.data.firebasemessagingservice.MyFirebaseMessagingService"

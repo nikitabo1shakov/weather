@@ -18,7 +18,12 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_maps.xml" value="0.2723076923076923" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_russia.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_settings.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_splash_logo.xml" value="0.22037037037037038" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_splash_logo_app.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_toolbar_home_info.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_visibility_off.xml" value="0.1925925925925926" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_visibility_on.xml" value="0.1925925925925926" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.1453804347826087" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_change_city_list.xml" value="0.14583333333333334" />
@@ -43,6 +48,7 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/google_maps_layout.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/item_city_list_recycler_view.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/item_history_recycler_view.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/item_home_recycler_view.xml" value="0.14673913043478262" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/layout_google_maps.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/layout_progress_bar.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/loading_layout.xml" value="0.1334853090172239" />
@@ -53,6 +59,7 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_action.xml" value="0.25" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_app_bar_home.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_toolbar_on_home_fragment.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

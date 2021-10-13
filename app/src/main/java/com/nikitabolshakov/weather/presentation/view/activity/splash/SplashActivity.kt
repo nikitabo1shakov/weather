@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.logoSplashActivity.animate().rotationBy(250f)
+        binding.logoOnSplash.animate().rotationBy(250f)
             .setInterpolator(LinearInterpolator()).duration = 10000
 
         handler.postDelayed({

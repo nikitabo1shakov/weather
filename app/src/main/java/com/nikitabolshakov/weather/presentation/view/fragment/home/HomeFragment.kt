@@ -24,9 +24,9 @@ import com.nikitabolshakov.weather.databinding.FragmentHomeBinding
 import com.nikitabolshakov.weather.presentation.state.AppState
 import com.nikitabolshakov.weather.presentation.utils.makeGone
 import com.nikitabolshakov.weather.presentation.utils.makeVisible
+import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import com.nikitabolshakov.weather.presentation.view.fragment.weather.WeatherFragment
 import com.nikitabolshakov.weather.presentation.viewmodel.home.HomeViewModel
-import com.nikitabolshakov.weather.presentation.utils.showSnackBar
 import com.nikitabolshakov.weather.presentation.view.fragment.info.viewpager.InfoFragment
 import java.io.IOException
 
@@ -74,15 +74,16 @@ class HomeFragment : Fragment() {
                 saveListOfTowns()
             }
 
-            toolbarHome.setOnMenuItemClickListener { item ->
+            toolbarOnHomeFragment.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.toolbar_home_info -> {
+                    R.id.info -> {
                         openInfoFragment()
                         true
                     }
-                    R.id.visible_fab_off_on -> {
+                    R.id.visibility -> {
                         fabGroupVisibility = !fabGroupVisibility
-                        fabGroup.visibility = if (fabGroupVisibility) View.VISIBLE else View.GONE
+                        groupFabs.visibility =
+                            if (fabGroupVisibility) View.VISIBLE else View.GONE
                         true
                     }
                     else -> false
@@ -247,7 +248,7 @@ class HomeFragment : Fragment() {
     private fun openWeatherFragment(weather: Weather) {
         activity?.supportFragmentManager?.apply {
             beginTransaction()
-                .replace(R.id.container_main_activity, WeatherFragment.newInstance(Bundle().apply {
+                .replace(R.id.container, WeatherFragment.newInstance(Bundle().apply {
                     putParcelable(WeatherFragment.BUNDLE_EXTRA, weather)
                 }))
                 .addToBackStack("")
@@ -278,17 +279,17 @@ class HomeFragment : Fragment() {
     private fun showWeatherDataSet() {
         if (isDataSetRus) {
             homeViewModel.getWeatherFromLocalSourceRus()
-            binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
+            binding.changeCityListFab.setImageResource(R.drawable.ic_change_city_list)
         } else {
             homeViewModel.getWeatherFromLocalSourceWorld()
-            binding.changeCityListFab.setImageResource(R.drawable.ic_fab_change_city_list)
+            binding.changeCityListFab.setImageResource(R.drawable.ic_change_city_list)
         }
     }
 
     private fun openInfoFragment() {
         activity?.supportFragmentManager?.apply {
             beginTransaction()
-                .replace(R.id.container_main_activity, InfoFragment())
+                .replace(R.id.container, InfoFragment())
                 .addToBackStack("")
                 .commitAllowingStateLoss()
         }

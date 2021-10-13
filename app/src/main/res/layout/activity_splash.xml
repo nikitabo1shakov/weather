@@ -7,14 +7,14 @@
     android:background="?attr/colorPrimary">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/name_app_splash_activity"
+        android:id="@+id/name_app_on_splash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/name_app_splash_activity"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="@dimen/name_app_on_splash"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +22,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/logo_splash_activity"
+        android:id="@+id/logo_on_splash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_splash_logo"
+        android:src="@drawable/ic_splash_logo_app"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_app_splash_activity"
+        app:layout_constraintTop_toBottomOf="@+id/name_app_on_splash"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 
