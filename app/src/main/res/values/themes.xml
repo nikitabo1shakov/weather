@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Weather" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/light_blue_200_primary_color</item>
-        <item name="colorPrimaryVariant">@color/light_blue_200_primary_dark_color</item>
-        <item name="colorOnPrimary">@color/light_blue_200_primary_light_color</item>
+        <item name="colorPrimary">@color/light_blue_200</item>
+        <item name="colorPrimaryVariant">@color/light_blue_200_dark</item>
+        <item name="colorOnPrimary">@color/light_blue_200_light</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/light_blue_a_200_secondary_color</item>
-        <item name="colorSecondaryVariant">@color/light_blue_a_200_secondary_dark_color</item>
-        <item name="colorOnSecondary">@color/light_blue_a_200_secondary_light_color</item>
+        <item name="colorSecondary">@color/light_blue_a_200</item>
+        <item name="colorSecondaryVariant">@color/light_blue_a_200_dark</item>
+        <item name="colorOnSecondary">@color/light_blue_a_200_light</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
