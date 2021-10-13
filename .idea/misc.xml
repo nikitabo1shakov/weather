@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_app_bar_info.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_bnv_city_list.xml" value="0.22777777777777777" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_bnv_google_maps.xml" value="0.22777777777777777" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_bnv_history.xml" value="0.22777777777777777" />
@@ -26,7 +27,7 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_details.xml" value="0.1453804347826087" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_google_maps.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_history.xml" value="0.1480978260869565" />
-        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_home.xml" value="0.1334853090172239" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_home.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_info.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_main.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_maps.xml" value="0.2" />
@@ -48,7 +49,9 @@
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/recycler_item_contact_list.xml" value="0.1453804347826087" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/recycler_item_history.xml" value="0.1480978260869565" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/recycler_item_main.xml" value="0.1480978260869565" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/layout/test.xml" value="0.2" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_action.xml" value="0.25" />
+        <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_app_bar_home.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/nikit/AndroidStudioProjects/Weather/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.27447916666666666" />
       </map>
     </option>

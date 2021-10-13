@@ -73,8 +73,14 @@ class HomeFragment : Fragment() {
                 saveListOfTowns()
             }
 
-            infoFab.setOnClickListener {
-                openInfoFragment()
+            toolbarHome.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.toolbar_home_info -> {
+                        openInfoFragment()
+                        true
+                    }
+                    else -> false
+                }
             }
         }
 
