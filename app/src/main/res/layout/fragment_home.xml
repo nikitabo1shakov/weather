@@ -54,6 +54,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="ContentDescription" />
 
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/fab_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="location_searching_and_get_weather_fab, change_city_list_fab" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include

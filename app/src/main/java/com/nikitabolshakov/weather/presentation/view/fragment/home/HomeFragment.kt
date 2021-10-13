@@ -37,6 +37,7 @@ private const val MINIMAL_DISTANCE = 100f
 class HomeFragment : Fragment() {
 
     private var isDataSetRus: Boolean = true
+    private var fabGroupVisibility: Boolean = true
 
     private val homeViewModel: HomeViewModel by lazy {
         ViewModelProvider(this).get(HomeViewModel::class.java)
@@ -77,6 +78,11 @@ class HomeFragment : Fragment() {
                 when (item.itemId) {
                     R.id.toolbar_home_info -> {
                         openInfoFragment()
+                        true
+                    }
+                    R.id.visible_fab_off_on -> {
+                        fabGroupVisibility = !fabGroupVisibility
+                        fabGroup.visibility = if (fabGroupVisibility) View.VISIBLE else View.GONE
                         true
                     }
                     else -> false

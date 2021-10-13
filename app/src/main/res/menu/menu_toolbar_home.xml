@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/visible_fab_off_on"
+        android:icon="@drawable/ic_visibility_off"
+        android:title="@string/toolbar_home_menu_visibility_fab"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/toolbar_home_info"
         android:icon="@drawable/ic_toolbar_home_info"
         android:title="@string/toolbar_home_menu_info"
