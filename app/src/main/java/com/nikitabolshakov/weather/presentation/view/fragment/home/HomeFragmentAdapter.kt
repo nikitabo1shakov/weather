@@ -15,7 +15,7 @@ class HomeFragmentAdapter : RecyclerView.Adapter<HomeFragmentAdapter.HomeViewHol
 
         fun bind(weather: Weather) {
             binding.apply {
-                itemCityListRecyclerView.text = weather.city.city
+                itemHomeRecyclerView.text = weather.city.city
                 root.setOnClickListener {
                     onItemViewClickListener(weather)
                 }
