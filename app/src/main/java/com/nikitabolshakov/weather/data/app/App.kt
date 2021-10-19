@@ -2,11 +2,17 @@ package com.nikitabolshakov.weather.data.app
 
 import android.app.Application
 import androidx.room.Room
+import com.github.terrakok.cicerone.Cicerone
+import com.github.terrakok.cicerone.Router
 import com.nikitabolshakov.weather.data.room.HistoryDao
 import com.nikitabolshakov.weather.data.room.HistoryDataBase
 import java.lang.IllegalStateException
 
 class App : Application() {
+
+    private val cicerone: Cicerone<Router> by lazy { Cicerone.create() }
+    val navigatorHolder get() = cicerone.getNavigatorHolder()
+    val router get() = cicerone.router
 
     override fun onCreate() {
         super.onCreate()
@@ -15,7 +21,7 @@ class App : Application() {
 
     companion object {
 
-        private var appInstance: App? = null
+        var appInstance: App? = null
         private var db: HistoryDataBase? = null
         private const val DB_NAME = "History.db"
 

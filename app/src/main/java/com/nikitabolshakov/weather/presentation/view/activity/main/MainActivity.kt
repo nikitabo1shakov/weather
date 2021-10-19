@@ -3,17 +3,20 @@ package com.nikitabolshakov.weather.presentation.view.activity.main
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
+import com.nikitabolshakov.weather.data.app.App
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
-import com.nikitabolshakov.weather.presentation.view.fragment.home.HomeFragment
-import com.nikitabolshakov.weather.presentation.utils.BottomNavigationViewMenuOpener
+import com.nikitabolshakov.weather.presentation.utils.screen_opener.ScreenOpener
 import com.nikitabolshakov.weather.presentation.utils.showToast
 
 class MainActivity : AppCompatActivity() {
 
-    private val bnvMenuOpener = BottomNavigationViewMenuOpener(supportFragmentManager)
+    private val navigator = AppNavigator(this, R.id.container)
+    private val router = App.appInstance?.router
+    private val screenOpener = ScreenOpener()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -24,9 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(binding.container.id, HomeFragment())
-                .commitNow()
+            router?.replaceScreen(screenOpener.openHomeFragment())
         }
 
         showToast(getString(R.string.version_app))
@@ -51,15 +52,15 @@ class MainActivity : AppCompatActivity() {
             bottomNavigationView.setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.bnv_home -> {
-                        bnvMenuOpener.openHomeFragment()
+                        router?.navigateTo(screenOpener.openHomeFragment())
                         true
                     }
                     R.id.bnv_history -> {
-                        bnvMenuOpener.openHistoryFragment()
+                        router?.navigateTo(screenOpener.openHistoryFragment())
                         true
                     }
                     R.id.bnv_google_maps -> {
-                        bnvMenuOpener.openGoogleMapsFragment()
+                        router?.navigateTo(screenOpener.openGoogleMapsFragment())
                         true
                     }
                     R.id.bnv_settings -> {
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     else -> {
-                        bnvMenuOpener.openHomeFragment()
+                        router?.navigateTo(screenOpener.openHomeFragment())
                         true
                     }
                 }
@@ -76,22 +77,32 @@ class MainActivity : AppCompatActivity() {
             bottomNavigationView.setOnNavigationItemReselectedListener { item ->
                 when (item.itemId) {
                     R.id.bnv_home -> {
-                        bnvMenuOpener.openHomeFragment()
+                        router?.navigateTo(screenOpener.openHomeFragment())
                     }
                     R.id.bnv_history -> {
-                        bnvMenuOpener.openHistoryFragment()
+                        router?.navigateTo(screenOpener.openHistoryFragment())
                     }
                     R.id.bnv_google_maps -> {
-                        bnvMenuOpener.openGoogleMapsFragment()
+                        router?.navigateTo(screenOpener.openGoogleMapsFragment())
                     }
                     R.id.bnv_settings -> {
                         showToast("Здесь будут настройки App")
                     }
                     else -> {
-                        bnvMenuOpener.openHomeFragment()
+                        router?.navigateTo(screenOpener.openHomeFragment())
                     }
                 }
             }
         }
+    }
+
+    override fun onResumeFragments() {
+        super.onResumeFragments()
+        App.appInstance?.navigatorHolder?.setNavigator(navigator)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        App.appInstance?.navigatorHolder?.removeNavigator()
     }
 }
