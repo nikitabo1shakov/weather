@@ -9,6 +9,7 @@ import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_SETTINGS_FRAGMENT
+import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_VISIBILITY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.view.fragment.info.screen.*
 
 class InfoFragmentAdapter(
@@ -19,9 +20,10 @@ class InfoFragmentAdapter(
         ScreenHomeFragment(),
         ScreenHistoryFragment(),
         ScreenGoogleMapsFragment(),
+        ScreenSettingsFragment(),
         ScreenLocationSearchingAndGetWeatherFragment(),
         ScreenChangeCityListFragment(),
-        ScreenSettingsFragment()
+        ScreenVisibilityFragment()
     )
 
     override fun getItem(position: Int): Fragment {
@@ -32,6 +34,7 @@ class InfoFragmentAdapter(
             3 -> fragments[SCREEN_SETTINGS_FRAGMENT]
             4 -> fragments[SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT]
             5 -> fragments[SCREEN_CHANGE_CITY_LIST_FRAGMENT]
+            6 -> fragments[SCREEN_VISIBILITY_FRAGMENT]
             else -> fragments[SCREEN_HOME_FRAGMENT]
         }
     }

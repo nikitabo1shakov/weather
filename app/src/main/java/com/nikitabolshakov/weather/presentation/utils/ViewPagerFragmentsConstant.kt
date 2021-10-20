@@ -7,4 +7,5 @@ object ViewPagerFragmentsConstant {
     const val SCREEN_SETTINGS_FRAGMENT = 3
     const val SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT = 4
     const val SCREEN_CHANGE_CITY_LIST_FRAGMENT = 5
+    const val SCREEN_VISIBILITY_FRAGMENT = 6
 }
