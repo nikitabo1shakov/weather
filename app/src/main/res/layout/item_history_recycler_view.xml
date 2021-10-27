@@ -19,6 +19,7 @@
             tools:text="New York City" />
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/move_up"
             style="@style/History_ImageView"
             android:src="@drawable/ic_move_up" />
 
@@ -36,6 +37,7 @@
             tools:text="Rain" />
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/move_down"
             style="@style/History_ImageView"
             android:src="@drawable/ic_move_down" />
 
@@ -53,6 +55,7 @@
             tools:text="7" />
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/delete"
             style="@style/History_ImageView"
             android:src="@drawable/ic_delete" />
 
