@@ -1,38 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/history_layout_margin"
+    android:background="@color/light_blue_50"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/city_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="35sp" />
+            style="@style/History_TextView"
+            android:textSize="@dimen/history_item_city_text_size"
+            tools:text="New York City" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/History_ImageView"
+            android:src="@drawable/ic_move_up" />
 
-            <TextView
-                android:id="@+id/weather_condition"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/feels_like_text_size" />
-
-            <TextView
-                android:id="@+id/weather_temperature"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/feels_like_text_size" />
-        </LinearLayout>
     </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_condition"
+            style="@style/History_TextView"
+            android:textSize="@dimen/style_history_text_view"
+            tools:text="Rain" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/History_ImageView"
+            android:src="@drawable/ic_move_down" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_temperature"
+            style="@style/History_TextView"
+            android:textSize="@dimen/style_history_text_view"
+            tools:text="7" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/History_ImageView"
+            android:src="@drawable/ic_delete" />
+
+    </LinearLayout>
+</LinearLayout>

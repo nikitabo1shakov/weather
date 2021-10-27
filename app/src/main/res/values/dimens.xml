@@ -14,4 +14,7 @@
     <dimen name="town_header_height">100dp</dimen>
     <dimen name="fab_location_icon_size">45dp</dimen>
     <dimen name="name_app_on_splash">30sp</dimen>
+    <dimen name="history_layout_margin">10dp</dimen>
+    <dimen name="history_item_city_text_size">30sp</dimen>
+    <dimen name="style_history_text_view">20sp</dimen>
 </resources>
