@@ -1,16 +1,20 @@
 package com.nikitabolshakov.weather.data.model
 
 fun getWorldCities() = mutableListOf(
-    Weather(City("Лондон", 51.5085300, -0.1257400), 1, 2),
-    Weather(City("Токио", 35.6895000, 139.6917100), 3, 4),
-    Weather(City("Париж", 48.8534100, 2.3488000), 5, 6),
-    Weather(City("Берлин", 52.52000659999999, 13.404953999999975), 7, 8),
-    Weather(City("Рим", 41.9027835, 12.496365500000024), 9, 10),
-    Weather(City("Минск", 53.90453979999999, 27.561524400000053), 11, 12),
-    Weather(City("Стамбул", 41.0082376, 28.97835889999999), 13, 14),
-    Weather(City("Вашингтон", 38.9071923, -77.03687070000001), 15, 16),
-    Weather(City("Киев", 50.4501, 30.523400000000038), 17, 18),
-    Weather(City("Пекин", 39.90419989999999, 116.40739630000007), 19, 20)
+    Weather(City("London", 51.5085300, -0.1257400), 1, 2),
+    Weather(City("Tokyo", 35.6895000, 139.6917100), 3, 4),
+    Weather(City("Sydney", -33.8679, 151.207)),
+    Weather(City("Los Angeles", 34.0522, -118.244)),
+    Weather(City("Paris", 48.8534100, 2.3488000), 5, 6),
+    Weather(City("Berlin", 52.52000659999999, 13.404953999999975), 7, 8),
+    Weather(City("Rome", 41.9027835, 12.496365500000024), 9, 10),
+    Weather(City("New York City", 40.7143, -74.006)),
+    Weather(City("Minsk", 53.90453979999999, 27.561524400000053), 11, 12),
+    Weather(City("Istanbul", 41.0082376, 28.97835889999999), 13, 14),
+    Weather(City("Washington", 38.9071923, -77.03687070000001), 15, 16),
+    Weather(City("Kiev", 50.4501, 30.523400000000038), 17, 18),
+    Weather(City("San Francisco", 37.7749, -122.419)),
+    Weather(City("Miami", 25.7743, -80.1937))
 )
 
 fun getRussianCities() = mutableListOf(
@@ -23,5 +27,7 @@ fun getRussianCities() = mutableListOf(
     Weather(City("Челябинск", 55.1644419, 61.4368432), 13, 14),
     Weather(City("Омск", 54.9884804, 73.32423610000001), 15, 16),
     Weather(City("Ростов-на-Дону", 47.2357137, 39.701505), 17, 18),
-    Weather(City("Уфа", 54.7387621, 55.972055400000045), 19, 20)
+    Weather(City("Уфа", 54.7387621, 55.972055400000045), 19, 20),
+    Weather(City("Владивосток", 43.1056, 131.874)),
+    Weather(City("Набережные Челны", 55.7254, 52.4112))
 )
