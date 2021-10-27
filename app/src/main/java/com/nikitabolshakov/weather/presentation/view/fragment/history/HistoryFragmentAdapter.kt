@@ -18,14 +18,40 @@ class HistoryFragmentAdapter : RecyclerView.Adapter<HistoryFragmentAdapter.Histo
                 cityName.text = data.city.city
                 weatherCondition.text = data.condition
                 weatherTemperature.text = data.temperature.toString()
+                moveUp.setOnClickListener { moveUp() }
+                moveDown.setOnClickListener { moveDown() }
+                delete.setOnClickListener { delete() }
             }
+        }
+
+        private fun moveUp() {
+            layoutPosition.takeIf { it > 0 }?.also { currentPosition ->
+                data.removeAt(currentPosition).apply {
+                    data.add(currentPosition - 1, this)
+                }
+                notifyItemMoved(currentPosition, currentPosition - 1)
+            }
+        }
+
+        private fun moveDown() {
+            layoutPosition.takeIf { it < data.size - 1 }?.also { currentPosition ->
+                data.removeAt(currentPosition).apply {
+                    data.add(currentPosition + 1, this)
+                }
+                notifyItemMoved(currentPosition, currentPosition + 1)
+            }
+        }
+
+        private fun delete() {
+            data.removeAt(layoutPosition)
+            notifyItemRemoved(layoutPosition)
         }
     }
 
-    private var data: List<Weather> = arrayListOf()
+    private var data = mutableListOf<Weather>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(data: List<Weather>) {
+    fun setData(data: MutableList<Weather>) {
         this.data = data
         notifyDataSetChanged()
     }
