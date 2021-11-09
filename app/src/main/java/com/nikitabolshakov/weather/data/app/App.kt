@@ -2,22 +2,15 @@ package com.nikitabolshakov.weather.data.app
 
 import android.app.Application
 import androidx.room.Room
-import com.github.terrakok.cicerone.Cicerone
-import com.github.terrakok.cicerone.Router
 import com.nikitabolshakov.weather.data.room.HistoryDao
 import com.nikitabolshakov.weather.data.room.HistoryDataBase
-import java.lang.IllegalStateException
+import com.nikitabolshakov.weather.di.AppComponent
+import com.nikitabolshakov.weather.di.AppModule
+import com.nikitabolshakov.weather.di.DaggerAppComponent
 
 class App : Application() {
 
-    private val cicerone: Cicerone<Router> by lazy { Cicerone.create() }
-    val navigatorHolder get() = cicerone.getNavigatorHolder()
-    val router get() = cicerone.router
-
-    override fun onCreate() {
-        super.onCreate()
-        appInstance = this
-    }
+    lateinit var appComponent: AppComponent
 
     companion object {
 
@@ -44,5 +37,13 @@ class App : Application() {
             }
             return db!!.historyDao()
         }
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        appInstance = this
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build()
     }
 }
