@@ -75,10 +75,6 @@ class MainActivity : AppCompatActivity() {
                         router.navigateTo(screenOpener.openGoogleMapsFragment())
                         true
                     }
-                    R.id.bnv_settings -> {
-                        showToast("Здесь будут настройки App")
-                        true
-                    }
                     else -> {
                         router.navigateTo(screenOpener.openHomeFragment())
                         true
@@ -96,9 +92,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.bnv_google_maps -> {
                         router.navigateTo(screenOpener.openGoogleMapsFragment())
-                    }
-                    R.id.bnv_settings -> {
-                        showToast("Здесь будут настройки App")
                     }
                     else -> {
                         router.navigateTo(screenOpener.openHomeFragment())

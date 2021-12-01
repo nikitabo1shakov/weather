@@ -8,7 +8,6 @@ import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_GOOGLE_MAPS_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_HISTORY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT
-import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_SETTINGS_FRAGMENT
 import com.nikitabolshakov.weather.presentation.utils.ViewPagerFragmentsConstant.SCREEN_VISIBILITY_FRAGMENT
 import com.nikitabolshakov.weather.presentation.view.fragment.info.screen.*
 
@@ -20,7 +19,6 @@ class InfoFragmentAdapter(
         ScreenHomeFragment(),
         ScreenHistoryFragment(),
         ScreenGoogleMapsFragment(),
-        ScreenSettingsFragment(),
         ScreenLocationSearchingAndGetWeatherFragment(),
         ScreenChangeCityListFragment(),
         ScreenVisibilityFragment()
@@ -31,10 +29,9 @@ class InfoFragmentAdapter(
             0 -> fragments[SCREEN_HOME_FRAGMENT]
             1 -> fragments[SCREEN_HISTORY_FRAGMENT]
             2 -> fragments[SCREEN_GOOGLE_MAPS_FRAGMENT]
-            3 -> fragments[SCREEN_SETTINGS_FRAGMENT]
-            4 -> fragments[SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT]
-            5 -> fragments[SCREEN_CHANGE_CITY_LIST_FRAGMENT]
-            6 -> fragments[SCREEN_VISIBILITY_FRAGMENT]
+            3 -> fragments[SCREEN_LOCATION_SEARCHING_AND_GET_WEATHER_FRAGMENT]
+            4 -> fragments[SCREEN_CHANGE_CITY_LIST_FRAGMENT]
+            5 -> fragments[SCREEN_VISIBILITY_FRAGMENT]
             else -> fragments[SCREEN_HOME_FRAGMENT]
         }
     }
