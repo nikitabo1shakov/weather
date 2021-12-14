@@ -3,8 +3,8 @@ package com.nikitabolshakov.weather.di
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
-import com.nikitabolshakov.weather.presentation.utils.screen_opener.IScreenOpener
-import com.nikitabolshakov.weather.presentation.utils.screen_opener.ScreenOpener
+import com.nikitabolshakov.weather.utils.cicerone.IScreenOpener
+import com.nikitabolshakov.weather.utils.cicerone.ScreenOpener
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

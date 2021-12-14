@@ -9,10 +9,10 @@ import com.github.terrakok.cicerone.androidx.AppNavigator
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nikitabolshakov.weather.R
-import com.nikitabolshakov.weather.data.app.App
+import com.nikitabolshakov.weather.application.App
 import com.nikitabolshakov.weather.databinding.ActivityMainBinding
-import com.nikitabolshakov.weather.presentation.utils.screen_opener.IScreenOpener
-import com.nikitabolshakov.weather.presentation.utils.showToast
+import com.nikitabolshakov.weather.utils.cicerone.IScreenOpener
+import com.nikitabolshakov.weather.utils.ui.showToast
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

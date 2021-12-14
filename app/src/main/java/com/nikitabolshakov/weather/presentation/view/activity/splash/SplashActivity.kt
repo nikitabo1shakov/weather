@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nikitabolshakov.weather.databinding.ActivitySplashBinding
 import com.nikitabolshakov.weather.presentation.view.activity.main.MainActivity
 
+private const val TIME_OF_LOAD_APP = 3000L
+
 class SplashActivity : AppCompatActivity() {
 
     var handler = Handler()
@@ -26,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
         handler.postDelayed({
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             finish()
-        }, 3000)
+        }, TIME_OF_LOAD_APP)
     }
 
     override fun onDestroy() {
